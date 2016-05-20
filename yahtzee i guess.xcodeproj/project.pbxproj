@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B651CEF9E690061634C /* AppDelegate.swift */; };
+		26A44B681CEF9E690061634C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* ViewController.swift */; };
+		26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B691CEF9E690061634C /* Main.storyboard */; };
+		26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6C1CEF9E690061634C /* Assets.xcassets */; };
+		26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */; };
+		26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26A44B771CEF9E690061634C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A44B5A1CEF9E690061634C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A44B611CEF9E690061634C;
+			remoteInfo = "yahtzee i guess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26A44B621CEF9E690061634C /* yahtzee i guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yahtzee i guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A44B651CEF9E690061634C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26A44B671CEF9E690061634C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26A44B6A1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26A44B6C1CEF9E690061634C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26A44B6F1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26A44B711CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yahtzee i guessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yahtzee_i_guessTests.swift; sourceTree = "<group>"; };
+		26A44B7C1CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26A44B5F1CEF9E690061634C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A44B731CEF9E690061634C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A44B591CEF9E690061634C = {
+			isa = PBXGroup;
+			children = (
+				26A44B641CEF9E690061634C /* yahtzee i guess */,
+				26A44B791CEF9E690061634C /* yahtzee i guessTests */,
+				26A44B631CEF9E690061634C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26A44B631CEF9E690061634C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26A44B621CEF9E690061634C /* yahtzee i guess.app */,
+				26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26A44B641CEF9E690061634C /* yahtzee i guess */ = {
+			isa = PBXGroup;
+			children = (
+				26A44B651CEF9E690061634C /* AppDelegate.swift */,
+				26A44B671CEF9E690061634C /* ViewController.swift */,
+				26A44B691CEF9E690061634C /* Main.storyboard */,
+				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
+				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
+				26A44B711CEF9E690061634C /* Info.plist */,
+			);
+			path = "yahtzee i guess";
+			sourceTree = "<group>";
+		};
+		26A44B791CEF9E690061634C /* yahtzee i guessTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */,
+				26A44B7C1CEF9E690061634C /* Info.plist */,
+			);
+			path = "yahtzee i guessTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26A44B611CEF9E690061634C /* yahtzee i guess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guess" */;
+			buildPhases = (
+				26A44B5E1CEF9E690061634C /* Sources */,
+				26A44B5F1CEF9E690061634C /* Frameworks */,
+				26A44B601CEF9E690061634C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "yahtzee i guess";
+			productName = "yahtzee i guess";
+			productReference = 26A44B621CEF9E690061634C /* yahtzee i guess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26A44B751CEF9E690061634C /* yahtzee i guessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guessTests" */;
+			buildPhases = (
+				26A44B721CEF9E690061634C /* Sources */,
+				26A44B731CEF9E690061634C /* Frameworks */,
+				26A44B741CEF9E690061634C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26A44B781CEF9E690061634C /* PBXTargetDependency */,
+			);
+			name = "yahtzee i guessTests";
+			productName = "yahtzee i guessTests";
+			productReference = 26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26A44B5A1CEF9E690061634C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Joselliam;
+				TargetAttributes = {
+					26A44B611CEF9E690061634C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UWKW2N9XWB;
+					};
+					26A44B751CEF9E690061634C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UWKW2N9XWB;
+						TestTargetID = 26A44B611CEF9E690061634C;
+					};
+				};
+			};
+			buildConfigurationList = 26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "yahtzee i guess" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26A44B591CEF9E690061634C;
+			productRefGroup = 26A44B631CEF9E690061634C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26A44B611CEF9E690061634C /* yahtzee i guess */,
+				26A44B751CEF9E690061634C /* yahtzee i guessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26A44B601CEF9E690061634C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */,
+				26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */,
+				26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A44B741CEF9E690061634C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26A44B5E1CEF9E690061634C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A44B681CEF9E690061634C /* ViewController.swift in Sources */,
+				26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A44B721CEF9E690061634C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26A44B781CEF9E690061634C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A44B611CEF9E690061634C /* yahtzee i guess */;
+			targetProxy = 26A44B771CEF9E690061634C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26A44B691CEF9E690061634C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A44B6A1CEF9E690061634C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A44B6F1CEF9E690061634C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26A44B7D1CEF9E690061634C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26A44B7E1CEF9E690061634C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26A44B801CEF9E690061634C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		26A44B811CEF9E690061634C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		26A44B831CEF9E690061634C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "yahtzee i guessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yahtzee i guess.app/yahtzee i guess";
+			};
+			name = Debug;
+		};
+		26A44B841CEF9E690061634C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "yahtzee i guessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yahtzee i guess.app/yahtzee i guess";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "yahtzee i guess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A44B7D1CEF9E690061634C /* Debug */,
+				26A44B7E1CEF9E690061634C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A44B801CEF9E690061634C /* Debug */,
+				26A44B811CEF9E690061634C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A44B831CEF9E690061634C /* Debug */,
+				26A44B841CEF9E690061634C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26A44B5A1CEF9E690061634C /* Project object */;
+}
