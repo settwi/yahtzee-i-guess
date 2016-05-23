@@ -64,6 +64,7 @@
 				26A44B631CEF9E690061634C /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		26A44B631CEF9E690061634C /* Products */ = {
 			isa = PBXGroup;
@@ -335,6 +336,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -346,6 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -392,6 +395,7 @@
 				26A44B811CEF9E690061634C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guessTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +404,7 @@
 				26A44B841CEF9E690061634C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
