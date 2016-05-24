@@ -6,6 +6,8 @@
 //  Copyright © 2016 Joselliam. All rights reserved.
 //
 
+import Foundation
+
 class ScoringBox {
     
     var name: String
@@ -14,7 +16,7 @@ class ScoringBox {
         self.name = name
     }
     
-    func score_dice(dice: [Int]) -> Int {
+    func scoreDice(dice: [Int]) -> Int {
         // same as chance
         return dice.reduce(0, combine: +)
     }
@@ -29,7 +31,7 @@ class NumScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice: [Int]) -> Int {
+    override func scoreDice(dice: [Int]) -> Int {
         return dice.filter({ $0 == self.numToScore }).reduce(0, combine: +)
     }
 }
@@ -43,7 +45,7 @@ class NOfAKindScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice: [Int]) -> Int {
+    override func scoreDice(dice: [Int]) -> Int {
         for die in dice {
             if dice.filter({ $0 == die }).count >= self.ofAKind {
                 return dice.reduce(0, combine: +)
@@ -71,18 +73,18 @@ class FullHouseScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice:[Int]) -> Int {
+    override func scoreDice(dice:[Int]) -> Int {
         let first = dice[0]
-        let num_of_first = dice.filter({ $0 == first }).count
+        let numOfFirst = dice.filter({ $0 == first }).count
         
-        if num_of_first == 2 || num_of_first == 3 {
-            let num_of_other = 2
-            if num_of_first == 2 {
-                num_of_other = 3
+        if numOfFirst == 2 || numOfFirst == 3 {
+            let numOfOther = 2
+            if numOfFirst == 2 {
+                numOfOther = 3
             }
             
             for  die in dice {
-                if die != first && dice.filter({ $0 == die }).count == num_of_other {
+                if die != first && dice.filter({ $0 == die }).count == numOfOther {
                     return 25
                 }
             }
@@ -98,17 +100,16 @@ class SmallStraightScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice: [Int]) -> Int {
-        let unique_dice = dice.sort()
+    override func scoreDice(dice: [Int]) -> Int {
+        let uniqueDice = Array(Set(dice)).sort()
         
-        if unique_dice.count < 4 {
+        if uniqueDice.count < 4 {
             return 0
         }
         
         for i in 0..<3 {
-            if unique_dice[i + 1] - unique_dice[1] != 1 {
+            if uniqueDice[i+1] - uniqueDice[1] != 1 {
                 return 0
-                
             }
         }
         
@@ -121,9 +122,9 @@ class LargeStraightScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice: [Int]) -> Int {
-        sorted_dice = dice.sort()
-        if sorted_dice == [1, 2, 3, 4, 5] || sorted_dice == [2, 3, 4, 5, 6] {
+    override func scoreDice(dice: [Int]) -> Int {
+        sortedDice = dice.sort()
+        if sortedDice == [1, 2, 3, 4, 5] || sortedDice == [2, 3, 4, 5, 6] {
             return 40
         }
         
@@ -136,8 +137,12 @@ class YahtzeeScoringBox: ScoringBox {
         super.init(name: name)
     }
     
-    override func score_dice(dice: [Int]) -> Int {
+    override func scoreDice(dice: [Int]) -> Int {
+        if Set(dice).count == 1 {
+            return 50
+        }
         
+        return 0
     }
 }
 
