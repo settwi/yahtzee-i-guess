@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6C1CEF9E690061634C /* Assets.xcassets */; };
 		26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */; };
 		26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */; };
+		46C81DAE1CF38FF700663C25 /* SixSidedDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */; };
+		46C81DAF1CF38FF700663C25 /* SixSidedDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yahtzee i guessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yahtzee_i_guessTests.swift; sourceTree = "<group>"; };
 		26A44B7C1CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixSidedDie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
 				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
 				26A44B711CEF9E690061634C /* Info.plist */,
+				46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */,
 			);
 			path = "yahtzee i guess";
 			sourceTree = "<group>";
@@ -157,7 +161,7 @@
 				};
 			};
 			buildConfigurationList = 26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "yahtzee i guess" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -202,6 +206,7 @@
 			files = (
 				26A44B681CEF9E690061634C /* ViewController.swift in Sources */,
 				26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */,
+				46C81DAE1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */,
+				46C81DAF1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
