@@ -54,3 +54,93 @@ class NOfAKindScoringBox: ScoringBox {
     }
 }
 
+class ThreeOfAKindScoringBox: NOfAKindScoringBox {
+    init(name: String) {
+        super.init(name: name, 3)
+    }
+}
+
+class FourOfAKindScoringBox: NOfAKindScoringBox {
+    init(name:String) {
+        super.init(name: name, 4)
+    }
+}
+
+class FullHouseScoringBox: ScoringBox {
+    init(name: String) {
+        super.init(name: name)
+    }
+    
+    override func score_dice(dice:[Int]) -> Int {
+        let first = dice[0]
+        let num_of_first = dice.filter({ $0 == first }).count
+        
+        if num_of_first == 2 || num_of_first == 3 {
+            let num_of_other = 2
+            if num_of_first == 2 {
+                num_of_other = 3
+            }
+            
+            for  die in dice {
+                if die != first && dice.filter({ $0 == die }).count == num_of_other {
+                    return 25
+                }
+            }
+        }
+        
+        return 0
+    }
+    
+}
+
+class SmallStraightScoringBox: ScoringBox {
+    init(name: String) {
+        super.init(name: name)
+    }
+    
+    override func score_dice(dice: [Int]) -> Int {
+        let unique_dice = dice.sort()
+        
+        if unique_dice.count < 4 {
+            return 0
+        }
+        
+        for i in 0..<3 {
+            if unique_dice[i + 1] - unique_dice[1] != 1 {
+                return 0
+                
+            }
+        }
+        
+        return 30
+    }
+}
+
+class LargeStraightScoringBox: ScoringBox {
+    init(name: String) {
+        super.init(name: name)
+    }
+    
+    override func score_dice(dice: [Int]) -> Int {
+        sorted_dice = dice.sort()
+        if sorted_dice == [1, 2, 3, 4, 5] || sorted_dice == [2, 3, 4, 5, 6] {
+            return 40
+        }
+        
+        return 0
+    }
+}
+
+class YahtzeeScoringBox: ScoringBox {
+    init(name: String) {
+        super.init(name: name)
+    }
+    
+    override func score_dice(dice: [Int]) -> Int {
+        
+    }
+}
+
+
+
+

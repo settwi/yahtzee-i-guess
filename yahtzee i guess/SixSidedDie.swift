@@ -17,5 +17,6 @@ class SixSidedDie {
     
     func roll() -> Int {
         side = Int(arc4random_uniform(6) + 1)
+        return side
     }
 }

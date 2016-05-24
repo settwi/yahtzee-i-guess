@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		263D3ADC1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
-		263D3ADD1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
 		26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B651CEF9E690061634C /* AppDelegate.swift */; };
 		26A44B681CEF9E690061634C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* ViewController.swift */; };
 		26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B691CEF9E690061634C /* Main.storyboard */; };
@@ -41,7 +39,7 @@
 		26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yahtzee i guessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yahtzee_i_guessTests.swift; sourceTree = "<group>"; };
 		26A44B7C1CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixSidedDie.swift; sourceTree = "<group>"; };
+		46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SixSidedDie.swift; path = "yahtzee i guess/SixSidedDie.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +63,7 @@
 		26A44B591CEF9E690061634C = {
 			isa = PBXGroup;
 			children = (
+				46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */,
 				263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */,
 				26A44B641CEF9E690061634C /* yahtzee i guess */,
 				26A44B791CEF9E690061634C /* yahtzee i guessTests */,
@@ -91,7 +90,6 @@
 				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
 				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
 				26A44B711CEF9E690061634C /* Info.plist */,
-				46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */,
 			);
 			path = "yahtzee i guess";
 			sourceTree = "<group>";
