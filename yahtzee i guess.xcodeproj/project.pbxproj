@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263D3ADC1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
+		263D3ADD1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
 		26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B651CEF9E690061634C /* AppDelegate.swift */; };
 		26A44B681CEF9E690061634C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* ViewController.swift */; };
 		26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B691CEF9E690061634C /* Main.storyboard */; };
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringBoxes.swift; sourceTree = "<group>"; };
 		26A44B621CEF9E690061634C /* yahtzee i guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yahtzee i guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B651CEF9E690061634C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26A44B671CEF9E690061634C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		26A44B591CEF9E690061634C = {
 			isa = PBXGroup;
 			children = (
+				263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */,
 				26A44B641CEF9E690061634C /* yahtzee i guess */,
 				26A44B791CEF9E690061634C /* yahtzee i guessTests */,
 				26A44B631CEF9E690061634C /* Products */,
@@ -202,6 +206,7 @@
 			files = (
 				26A44B681CEF9E690061634C /* ViewController.swift in Sources */,
 				26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */,
+				263D3ADC1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */,
+				263D3ADD1CF4C7F600B9B5DE /* ScoringBoxes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
