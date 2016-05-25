@@ -138,7 +138,10 @@ class YahtzeeScoringBox: ScoringBox {
     }
     
     override func scoreDice(dice: [Int]) -> Int {
-        
+        if Set(dice).count != 1 {
+            return 0
+        }
+        return 50
     }
 }
 
