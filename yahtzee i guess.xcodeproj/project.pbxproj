@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
+		267080891CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
+		267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
+		267DB8EC1CF734C100CF1762 /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
 		26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B651CEF9E690061634C /* AppDelegate.swift */; };
 		26A44B681CEF9E690061634C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* ViewController.swift */; };
 		26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B691CEF9E690061634C /* Main.storyboard */; };
@@ -29,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringBoxes.swift; sourceTree = "<group>"; };
+		267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahtzeeScoringCard.swift; sourceTree = "<group>"; };
 		26A44B621CEF9E690061634C /* yahtzee i guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yahtzee i guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B651CEF9E690061634C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26A44B671CEF9E690061634C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,11 +65,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26A44B591CEF9E690061634C = {
+		267080861CF6287300B53E35 /* logic */ = {
 			isa = PBXGroup;
 			children = (
 				46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */,
 				263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */,
+				267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */,
+			);
+			name = logic;
+			sourceTree = "<group>";
+		};
+		26A44B591CEF9E690061634C = {
+			isa = PBXGroup;
+			children = (
+				267080861CF6287300B53E35 /* logic */,
 				26A44B641CEF9E690061634C /* yahtzee i guess */,
 				26A44B791CEF9E690061634C /* yahtzee i guessTests */,
 				26A44B631CEF9E690061634C /* Products */,
@@ -206,7 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */,
 				26A44B681CEF9E690061634C /* ViewController.swift in Sources */,
+				267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */,
 				26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */,
 				46C81DAE1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
 			);
@@ -218,6 +234,8 @@
 			files = (
 				26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */,
 				46C81DAF1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
+				267080891CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */,
+				267DB8EC1CF734C100CF1762 /* ScoringBoxes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

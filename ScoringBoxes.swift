@@ -58,27 +58,23 @@ class NOfAKindScoringBox: ScoringBox {
 
 class ThreeOfAKindScoringBox: NOfAKindScoringBox {
     init(name: String) {
-        super.init(name: name, 3)
+        super.init(name: name, ofAKind: 3)
     }
 }
 
 class FourOfAKindScoringBox: NOfAKindScoringBox {
     init(name:String) {
-        super.init(name: name, 4)
+        super.init(name: name, ofAKind: 4)
     }
 }
 
 class FullHouseScoringBox: ScoringBox {
-    init(name: String) {
-        super.init(name: name)
-    }
-    
     override func scoreDice(dice:[Int]) -> Int {
         let first = dice[0]
         let numOfFirst = dice.filter({ $0 == first }).count
         
         if numOfFirst == 2 || numOfFirst == 3 {
-            let numOfOther = 2
+            var numOfOther = 2
             if numOfFirst == 2 {
                 numOfOther = 3
             }
@@ -96,10 +92,6 @@ class FullHouseScoringBox: ScoringBox {
 }
 
 class SmallStraightScoringBox: ScoringBox {
-    init(name: String) {
-        super.init(name: name)
-    }
-    
     override func scoreDice(dice: [Int]) -> Int {
         let uniqueDice = Array(Set(dice)).sort()
         
@@ -118,12 +110,8 @@ class SmallStraightScoringBox: ScoringBox {
 }
 
 class LargeStraightScoringBox: ScoringBox {
-    init(name: String) {
-        super.init(name: name)
-    }
-    
     override func scoreDice(dice: [Int]) -> Int {
-        sortedDice = dice.sort()
+        let sortedDice = dice.sort()
         if sortedDice == [1, 2, 3, 4, 5] || sortedDice == [2, 3, 4, 5, 6] {
             return 40
         }
@@ -133,10 +121,6 @@ class LargeStraightScoringBox: ScoringBox {
 }
 
 class YahtzeeScoringBox: ScoringBox {
-    init(name: String) {
-        super.init(name: name)
-    }
-    
     override func scoreDice(dice: [Int]) -> Int {
         if Set(dice).count != 1 {
             return 0
