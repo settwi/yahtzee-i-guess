@@ -11,25 +11,38 @@ import XCTest
 
 class yahtzee_i_guessTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    // todo: only allow one turn
+    func testYahtzeeLogic() {
+        let gameLogic = YahtzeeGameLogic(playersThisGame: 1)
+        do {
+            try gameLogic.rollDice([1, 2, 3, 4, 5])
+        } catch {
+            print("gameLogic.rollDice: \(error)")
+        }
+        
+        if gameLogic.intDice.contains(1) {
+            do {
+                try gameLogic.scoreRoll("Ones")
+                print("scored ones")
+            } catch {
+                print("gameLogic.scoreRoll: \(error)")
+            }
+        }
+        else {
+            print("there aren't any ones in this")
+        }
+        
+        let hackDie = SixSidedDie()
+        hackDie.side = 4
+        gameLogic.dice = (0..<5).map({ (_: Int) in hackDie })
+        try! gameLogic.nextTurn()
+        if let _ = (try? gameLogic.rollDice([0, 1, 2, 3, 4])) {
+            do {
+                try gameLogic.scoreRoll("YAHTZEE")
+                print("scored a yahtzee")
+            } catch {
+                print("score yahtzee: \(error)")
+            }
         }
     }
     

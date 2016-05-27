@@ -49,16 +49,23 @@ class YahtzeeScoringCard {
             bottomScores[k] = -1
         }
     }
-    
+
     func retrieveScores(dice: [Int]) -> [[String:Int]] {
-        var scorable: [[String:Int]] = [ [:], [:] ]
+        var scorable: [[String:Int]] = [[:], [:]]
         
         for (k, box) in topBoxes {
-            scorable[0][k] = box.scoreDice(dice) // dice dice, baby
+            if topScores[k] == -1 {
+                scorable[0][k] = box.scoreDice(dice) // dice dice, baby
+            }
         }
         
         for (k, box) in bottomBoxes {
-            scorable[1][k] = box.scoreDice(dice)
+            if bottomScores[k] == -1 {
+                scorable[1][k] = box.scoreDice(dice)
+            }
+            if k == "YAHTZEE" && bottomScores[k] != 0 {
+                scorable[1][k] = box.scoreDice(dice)
+            }
         }
         
         return scorable
@@ -97,7 +104,7 @@ class YahtzeeScoringCard {
         let topScore = topScores.values.filter({ $0 != -1 }).reduce(0, combine: +)
         let bottomScore = bottomScores.values.filter({ $0 != -1 }).reduce(0, combine: +)
         let topBonus = topScore >= 63 ? 35 : 0
-        let yahtzeeBonus = 50 * max(0, yahtzees - 1)
+        let yahtzeeBonus = 100 * max(0, yahtzees - 1)
         
         return [topScore, topBonus, bottomScore, yahtzeeBonus]
     }
