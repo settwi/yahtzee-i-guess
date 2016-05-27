@@ -40,7 +40,8 @@ class InitialScreenViewController: UIViewController {
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = segue.destinationViewController as? GameViewController {
+        if let navDestination = segue.destinationViewController as? UINavigationController,
+           let destination = navDestination.topViewController as? GameViewController {
             destination.numPlayers = numPlayers
         } else {
             print("WFHWEFWLEFJLWEJFLKWLEKFJ")
