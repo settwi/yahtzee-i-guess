@@ -9,7 +9,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -62,9 +61,61 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="ohU-yE-MMt" kind="presentation" identifier="NewGameSegue" id="hwF-ZO-NEt"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="356"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="77z-go-LWM">
+            <objects>
+                <viewController id="ohU-yE-MMt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iTj-az-Kho"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ps-LG-5C3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JY5-MV-Loh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ah1-m7-arc">
+                                <rect key="frame" x="140" y="167" width="320" height="267"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-m9-faq">
+                                        <rect key="frame" x="89" y="0.0" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8o-Zg-CeH">
+                                        <rect key="frame" x="0.0" y="21" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73M-vF-2uH">
+                                        <rect key="frame" x="136" y="237" width="49" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ah1-m7-arc" firstAttribute="leading" secondItem="JY5-MV-Loh" secondAttribute="leadingMargin" constant="20" id="7Mh-3f-FaP"/>
+                            <constraint firstItem="ah1-m7-arc" firstAttribute="centerY" secondItem="JY5-MV-Loh" secondAttribute="centerY" id="fzP-MW-z7H"/>
+                            <constraint firstItem="ah1-m7-arc" firstAttribute="centerX" secondItem="JY5-MV-Loh" secondAttribute="centerX" id="mqS-RH-7Pm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Mh-3f-FaP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yp-Mk-WK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297" y="111"/>
         </scene>
     </scenes>
 </document>
