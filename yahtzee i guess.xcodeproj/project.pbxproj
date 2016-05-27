@@ -10,10 +10,12 @@
 		264B29D91CF7DA6D006F1CB9 /* YahtzeeGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AC4561CF7515F00431C0C /* YahtzeeGameLogic.swift */; };
 		267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
 		267080891CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
+		267D2BF51CF8A78700B1B91C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */; };
+		267D2BF71CF8D68E00B1B91C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267D2BF61CF8D68E00B1B91C /* GameViewController.swift */; };
 		267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
 		267DB8EC1CF734C100CF1762 /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
 		26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B651CEF9E690061634C /* AppDelegate.swift */; };
-		26A44B681CEF9E690061634C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* ViewController.swift */; };
+		26A44B681CEF9E690061634C /* InitialScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B671CEF9E690061634C /* InitialScreenViewController.swift */; };
 		26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B691CEF9E690061634C /* Main.storyboard */; };
 		26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6C1CEF9E690061634C /* Assets.xcassets */; };
 		26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */; };
@@ -36,9 +38,11 @@
 /* Begin PBXFileReference section */
 		263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringBoxes.swift; sourceTree = "<group>"; };
 		267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahtzeeScoringCard.swift; sourceTree = "<group>"; };
+		267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		267D2BF61CF8D68E00B1B91C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		26A44B621CEF9E690061634C /* yahtzee i guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yahtzee i guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B651CEF9E690061634C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26A44B671CEF9E690061634C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26A44B671CEF9E690061634C /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		26A44B6A1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26A44B6C1CEF9E690061634C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26A44B6F1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,11 +107,13 @@
 			isa = PBXGroup;
 			children = (
 				26A44B651CEF9E690061634C /* AppDelegate.swift */,
-				26A44B671CEF9E690061634C /* ViewController.swift */,
+				26A44B671CEF9E690061634C /* InitialScreenViewController.swift */,
 				26A44B691CEF9E690061634C /* Main.storyboard */,
 				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
 				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
 				26A44B711CEF9E690061634C /* Info.plist */,
+				267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */,
+				267D2BF61CF8D68E00B1B91C /* GameViewController.swift */,
 			);
 			path = "yahtzee i guess";
 			sourceTree = "<group>";
@@ -225,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */,
-				26A44B681CEF9E690061634C /* ViewController.swift in Sources */,
+				26A44B681CEF9E690061634C /* InitialScreenViewController.swift in Sources */,
+				267D2BF51CF8A78700B1B91C /* NewGameViewController.swift in Sources */,
 				267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */,
+				267D2BF71CF8D68E00B1B91C /* GameViewController.swift in Sources */,
 				26A44B661CEF9E690061634C /* AppDelegate.swift in Sources */,
 				46C81DAE1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
 				467AC4571CF7515F00431C0C /* YahtzeeGameLogic.swift in Sources */,

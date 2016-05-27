@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ku0-T2-077">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Yahtzee!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialScreenViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,31 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-NZ-tHy">
-                                <rect key="frame" x="20" y="237" width="560" height="126"/>
+                                <rect key="frame" x="20" y="263" width="560" height="75"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzee!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uw-Cg-4pb">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="AQm-YZ-hc6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="AQm-YZ-hc6"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzx-0x-wNq">
-                                        <rect key="frame" x="0.0" y="51" width="560" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="New Game"/>
+                                        <connections>
+                                            <segue destination="ckx-Zv-4Mb" kind="presentation" identifier="newGameSegue" id="7Ta-GM-a9F"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-ek-7SM">
-                                        <rect key="frame" x="0.0" y="90" width="560" height="36"/>
+                                        <rect key="frame" x="0.0" y="39" width="560" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Continue Game"/>
+                                        <connections>
+                                            <segue destination="a6Q-oK-qpN" kind="showDetail" identifier="GameSegue" action="showViewController:sender:" id="Su1-XF-QKh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,18 +53,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Yahtzee!" id="PPS-so-YUY"/>
                     <connections>
-                        <segue destination="ohU-yE-MMt" kind="presentation" identifier="NewGameSegue" id="hwF-ZO-NEt"/>
+                        <outlet property="continueGameButton" destination="dUc-ek-7SM" id="6Nc-el-fds"/>
+                        <outlet property="newGameButton" destination="xzx-0x-wNq" id="ojl-oB-PW8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="356"/>
+            <point key="canvasLocation" x="2151" y="-411"/>
         </scene>
-        <!--View Controller-->
+        <!--Number of Players-->
         <scene sceneID="77z-go-LWM">
             <objects>
-                <viewController id="ohU-yE-MMt" sceneMemberID="viewController">
+                <viewController id="ohU-yE-MMt" customClass="NewGameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iTj-az-Kho"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ps-LG-5C3"/>
@@ -81,41 +75,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ah1-m7-arc">
-                                <rect key="frame" x="140" y="167" width="320" height="267"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-m9-faq">
-                                        <rect key="frame" x="89" y="0.0" width="142" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8o-Zg-CeH">
-                                        <rect key="frame" x="0.0" y="21" width="320" height="216"/>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73M-vF-2uH">
-                                        <rect key="frame" x="136" y="237" width="49" height="30"/>
-                                        <state key="normal" title="Submit"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8o-Zg-CeH">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ah1-m7-arc" firstAttribute="leading" secondItem="JY5-MV-Loh" secondAttribute="leadingMargin" constant="20" id="7Mh-3f-FaP"/>
-                            <constraint firstItem="ah1-m7-arc" firstAttribute="centerY" secondItem="JY5-MV-Loh" secondAttribute="centerY" id="fzP-MW-z7H"/>
-                            <constraint firstItem="ah1-m7-arc" firstAttribute="centerX" secondItem="JY5-MV-Loh" secondAttribute="centerX" id="mqS-RH-7Pm"/>
+                            <constraint firstItem="u8o-Zg-CeH" firstAttribute="centerX" secondItem="JY5-MV-Loh" secondAttribute="centerX" id="Aa1-AE-mAO"/>
+                            <constraint firstItem="u8o-Zg-CeH" firstAttribute="centerY" secondItem="JY5-MV-Loh" secondAttribute="centerY" id="miQ-JY-fj8"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="7Mh-3f-FaP"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Number of Players" id="8CF-fT-dMs">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="I7u-EA-J8L"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EIB-e8-KPY">
+                            <connections>
+                                <action selector="exit:" destination="ohU-yE-MMt" id="tRT-bq-eBN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="yUm-pg-fls">
+                            <connections>
+                                <segue destination="aJE-ED-zsv" kind="unwind" unwindAction="unwindToMainWindow:" id="dbl-7b-R6X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playButton" destination="yUm-pg-fls" id="xLQ-G6-hC5"/>
+                        <outlet property="playerPicker" destination="u8o-Zg-CeH" id="KcU-Mc-UrG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yp-Mk-WK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aJE-ED-zsv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="111"/>
+            <point key="canvasLocation" x="3717" y="-801"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nT3-kl-eA5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ckx-Zv-4Mb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gN-fj-7A1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ohU-yE-MMt" kind="relationship" relationship="rootViewController" id="kd1-ER-mSc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCy-GT-vyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2941" y="-801"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="Fip-VZ-Ix8">
+            <objects>
+                <viewController storyboardIdentifier="GameView" id="vLZ-Zm-8wk" customClass="GameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KqR-lC-Yng"/>
+                        <viewControllerLayoutGuide type="bottom" id="UTl-6k-KEk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="puF-bZ-41T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-3F-Swl">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HP8-3F-Swl" firstAttribute="centerY" secondItem="puF-bZ-41T" secondAttribute="centerY" id="bRV-OX-SGo"/>
+                            <constraint firstItem="HP8-3F-Swl" firstAttribute="centerX" secondItem="puF-bZ-41T" secondAttribute="centerX" id="zu6-uv-TU4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game" id="OSC-2P-Z3u">
+                        <barButtonItem key="leftBarButtonItem" title="Quit" id="X0V-BK-MhW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="opk-SX-JX4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="testlabel" destination="HP8-3F-Swl" id="RQ2-JE-e7S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRL-96-8aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2211" y="940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AJE-e6-aB9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="des-fW-Pmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a6Q-oK-qpN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="exT-Ut-Me8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vLZ-Zm-8wk" kind="relationship" relationship="rootViewController" id="6SR-re-PBx"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="3359" y="-113"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RRl-rJ-VuR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ku0-T2-077" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdH-Sk-VAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZaC-PX-RF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twg-aq-Xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1339" y="-411"/>
         </scene>
     </scenes>
 </document>
