@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264B29D91CF7DA6D006F1CB9 /* YahtzeeGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AC4561CF7515F00431C0C /* YahtzeeGameLogic.swift */; };
 		267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
 		267080891CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267080871CF628FD00B53E35 /* YahtzeeScoringCard.swift */; };
 		267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */; };
@@ -237,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */,
+				264B29D91CF7DA6D006F1CB9 /* YahtzeeGameLogic.swift in Sources */,
 				46C81DAF1CF38FF700663C25 /* SixSidedDie.swift in Sources */,
 				267080891CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */,
 				267DB8EC1CF734C100CF1762 /* ScoringBoxes.swift in Sources */,
@@ -362,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
@@ -374,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
