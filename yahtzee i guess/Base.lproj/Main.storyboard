@@ -94,7 +94,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="yUm-pg-fls">
                             <connections>
-                                <segue destination="aJE-ED-zsv" kind="unwind" unwindAction="unwindToMainWindow:" id="dbl-7b-R6X"/>
+                                <segue destination="aJE-ED-zsv" kind="unwind" unwindAction="unwindFromNewGame:" id="RnS-q3-Ev0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,18 +138,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-3F-Swl">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-Gz-fDE">
+                                <rect key="frame" x="20" y="534" width="560" height="46"/>
+                                <color key="backgroundColor" red="0.98104967948717947" green="0.98104967948717947" blue="0.98104967948717947" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Roll"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-1u-ILq" customClass="SelectDiceView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="DEC-i6-jdN"/>
+                                    <constraint firstAttribute="height" constant="100" id="MLW-mv-3FQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="QBA-XC-EOz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DEC-i6-jdN"/>
+                                        <exclude reference="MLW-mv-3FQ"/>
+                                        <exclude reference="QBA-XC-EOz"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wp4-Qc-maD">
+                                <rect key="frame" x="20" y="108" width="560" height="418"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-3F-Swl">
+                                        <rect key="frame" x="259" y="199" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="HP8-3F-Swl" firstAttribute="centerX" secondItem="wp4-Qc-maD" secondAttribute="centerX" id="FJy-uF-1Y2"/>
+                                    <constraint firstItem="HP8-3F-Swl" firstAttribute="centerY" secondItem="wp4-Qc-maD" secondAttribute="centerY" id="YFQ-Mi-LBe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HP8-3F-Swl" firstAttribute="centerY" secondItem="puF-bZ-41T" secondAttribute="centerY" id="bRV-OX-SGo"/>
-                            <constraint firstItem="HP8-3F-Swl" firstAttribute="centerX" secondItem="puF-bZ-41T" secondAttribute="centerX" id="zu6-uv-TU4"/>
+                            <constraint firstItem="SN4-Gz-fDE" firstAttribute="top" secondItem="wp4-Qc-maD" secondAttribute="bottom" constant="8" symbolic="YES" id="1b7-cu-0Of"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SN4-Gz-fDE" secondAttribute="trailing" id="4Iu-32-dtn"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="trailing" secondItem="puF-bZ-41T" secondAttribute="trailingMargin" id="78M-hA-Aj2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SN4-Gz-fDE" secondAttribute="trailing" id="9HF-Zm-OZ7"/>
+                            <constraint firstItem="SN4-Gz-fDE" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="DB7-dy-wLN"/>
+                            <constraint firstAttribute="bottom" secondItem="hB9-1u-ILq" secondAttribute="bottom" constant="428" id="Gwd-rh-Gq8"/>
+                            <constraint firstItem="hB9-1u-ILq" firstAttribute="leading" secondItem="wp4-Qc-maD" secondAttribute="leading" id="HMN-kA-Mg0"/>
+                            <constraint firstItem="hB9-1u-ILq" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="Hs3-tT-Kv2"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="centerX" secondItem="puF-bZ-41T" secondAttribute="centerX" id="KTl-Eg-rZs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wp4-Qc-maD" secondAttribute="trailing" id="UEZ-9U-Hl4"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leading" id="WgK-fa-q20"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" constant="8" symbolic="YES" id="a1h-xf-Wkx"/>
+                            <constraint firstItem="SN4-Gz-fDE" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="acS-GR-tyy"/>
+                            <constraint firstItem="hB9-1u-ILq" firstAttribute="trailing" secondItem="wp4-Qc-maD" secondAttribute="trailing" id="dCY-wW-PrC"/>
+                            <constraint firstItem="SN4-Gz-fDE" firstAttribute="centerX" secondItem="puF-bZ-41T" secondAttribute="centerX" id="fGG-29-Ttx"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="hoc-Kt-Hjh"/>
+                            <constraint firstItem="hB9-1u-ILq" firstAttribute="top" secondItem="KqR-lC-Yng" secondAttribute="bottom" constant="8" symbolic="YES" id="kfh-6N-9b9"/>
+                            <constraint firstItem="UTl-6k-KEk" firstAttribute="top" secondItem="SN4-Gz-fDE" secondAttribute="bottom" constant="20" id="oJG-yU-WOr"/>
+                            <constraint firstAttribute="bottom" secondItem="hB9-1u-ILq" secondAttribute="bottom" constant="500" id="oMJ-GB-2kW"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="pqk-aN-aK7"/>
+                            <constraint firstItem="hB9-1u-ILq" firstAttribute="centerX" secondItem="puF-bZ-41T" secondAttribute="centerX" id="vmh-TK-8PR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hB9-1u-ILq" secondAttribute="trailing" id="yVq-a1-a08"/>
+                            <constraint firstItem="wp4-Qc-maD" firstAttribute="centerX" secondItem="hB9-1u-ILq" secondAttribute="centerX" id="z3L-A2-iIY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gwd-rh-Gq8"/>
+                                <exclude reference="HMN-kA-Mg0"/>
+                                <exclude reference="dCY-wW-PrC"/>
+                                <exclude reference="78M-hA-Aj2"/>
+                                <exclude reference="WgK-fa-q20"/>
+                                <exclude reference="hoc-Kt-Hjh"/>
+                                <exclude reference="z3L-A2-iIY"/>
+                                <exclude reference="9HF-Zm-OZ7"/>
+                                <exclude reference="acS-GR-tyy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="OSC-2P-Z3u">
                         <barButtonItem key="leftBarButtonItem" title="Quit" id="X0V-BK-MhW"/>

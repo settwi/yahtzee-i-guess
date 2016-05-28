@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialScreenViewController.swift
 //  yahtzee i guess
 //
 //  Created by William Setterberg on 5/20/16.
@@ -13,6 +13,7 @@ class InitialScreenViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var continueGameButton: UIButton!
     var numPlayers: Int = 0
+    var previousGameLogic: YahtzeeGameLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class InitialScreenViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if numPlayers != 0 {
-            print("numPlayers: \(numPlayers)")
             performSegueWithIdentifier("GameSegue", sender: self)
         }
     }
@@ -31,7 +31,7 @@ class InitialScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToMainWindow(sender: UIStoryboardSegue) {
+    @IBAction func unwindFromNewGame(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? NewGameViewController {
             numPlayers = sourceViewController.numPlayers
         }
@@ -42,9 +42,7 @@ class InitialScreenViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navDestination = segue.destinationViewController as? UINavigationController,
            let destination = navDestination.topViewController as? GameViewController {
-            destination.numPlayers = numPlayers
-        } else {
-            print("WFHWEFWLEFJLWEJFLKWLEKFJ")
+            destination.receiveDataFromMainView(numPlayers, previousGameLogic: previousGameLogic)
         }
     }
 }
