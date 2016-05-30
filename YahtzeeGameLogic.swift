@@ -16,9 +16,17 @@ enum YahtzeeLogicError: ErrorType {
     case GameOver
 }
 
-class YahtzeeGameLogic {
-    // Logic API for a Swift Yahtzee Game
-    
+extension YahtzeeLogicError {
+    var description: String {
+        switch self {
+            case .UnusableDiceProvided: return "Pick appropriate dice"
+            default: return String(self)
+        }
+    }
+}
+
+class YahtzeeGameLogic: NSObject, NSCoding {
+    // MARK: Properties
     var dice: [SixSidedDie]
     var scoreCards: [YahtzeeScoringCard]
     var turn, playersGone, rollsRemaining, numPlayers: Int
@@ -30,6 +38,24 @@ class YahtzeeGameLogic {
     var potentialScores: [[String:Int]] { return currentScoreCard.retrieveScores(intDice) }
     var intDice: [Int] { return dice.map({ $0.side }) }
     
+    // MARK: Archiving Paths
+    static let DocumentsDirectory = NSFileManager().URLsForDirectory(
+        .DocumentDirectory, inDomains: .UserDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("yahtzee")
+    
+    // MARK: Types
+    struct PropertyKey {
+        static let diceKey = "dice"
+        static let scoreCardsKey = "scoreCards"
+        static let numPlayersKey = "numPlayers"
+        static let turnKey = "turn"
+        static let playersGoneKey = "playersGone"
+        static let scoredThisTurnKey = "scoredThisTurn"
+        static let gameOverKey = "gameOver"
+        static let rollsRemainingKey = "rollsRemaining"
+    }
+    
+    // MARK: Initialization
     init(playersThisGame: Int) {
         // generate 5 dice nicely
         dice = (0..<5).map({ (_: Int) in SixSidedDie() })
@@ -57,6 +83,7 @@ class YahtzeeGameLogic {
         
         if numRounds == 13 {
             gameOver = true
+            throw YahtzeeLogicError.GameOver
         }
     }
     
@@ -100,6 +127,33 @@ class YahtzeeGameLogic {
         
         try currentScoreCard.scoreRoll(intDice, which: which)
         scoredThisTurn = true
+    }
+    
+    // MARK: NSCoding
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(dice, forKey: PropertyKey.diceKey)
+        aCoder.encodeObject(scoreCards, forKey: PropertyKey.scoreCardsKey)
+        aCoder.encodeInteger(numPlayers, forKey: PropertyKey.numPlayersKey)
+        aCoder.encodeInteger(turn, forKey: PropertyKey.turnKey)
+        aCoder.encodeInteger(playersGone, forKey: PropertyKey.playersGoneKey)
+        aCoder.encodeInteger(rollsRemaining, forKey: PropertyKey.rollsRemainingKey)
+        aCoder.encodeBool(scoredThisTurn, forKey: PropertyKey.scoredThisTurnKey)
+        aCoder.encodeBool(gameOver, forKey: PropertyKey.gameOverKey)
+        // wow that's a mouthful
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        dice = aDecoder.decodeObjectForKey(PropertyKey.diceKey) as! [SixSidedDie]
+        scoreCards = aDecoder.decodeObjectForKey(PropertyKey.scoreCardsKey) as! [YahtzeeScoringCard]
+        numPlayers = aDecoder.decodeIntegerForKey(PropertyKey.numPlayersKey)
+        turn = aDecoder.decodeIntegerForKey(PropertyKey.turnKey)
+        playersGone = aDecoder.decodeIntegerForKey(PropertyKey.playersGoneKey)
+        rollsRemaining = aDecoder.decodeIntegerForKey(PropertyKey.rollsRemainingKey)
+        scoredThisTurn = aDecoder.decodeBoolForKey(PropertyKey.scoredThisTurnKey)
+        gameOver = aDecoder.decodeBoolForKey(PropertyKey.gameOverKey)
+        // also a mouthful
+        // and a waste of time
+        // whatever
     }
 }
 

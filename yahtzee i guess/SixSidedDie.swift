@@ -6,17 +6,28 @@
 //  Copyright © 2016 Joselliam. All rights reserved.
 //
 
-import Darwin
+import Foundation
 
-class SixSidedDie {
+class SixSidedDie: NSObject, NSCoding {
     var side: Int
     
-    init() {
+    override init() {
         side = Int(arc4random_uniform(6) + 1)
+        super.init()
     }
     
     func roll() -> Int {
         side = Int(arc4random_uniform(6) + 1)
         return side
+    }
+    
+    // MARK: NSCoding
+    required init(coder aDecoder: NSCoder) {
+        let side = aDecoder.decodeIntegerForKey("side")
+        self.side = side
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeInteger(side, forKey: "side")
     }
 }

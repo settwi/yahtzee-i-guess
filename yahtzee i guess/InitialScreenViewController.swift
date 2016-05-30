@@ -21,6 +21,16 @@ class InitialScreenViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // TEMPORARY
+        // is it though
+        if let gameLogic = loadPreviousGame() {
+            previousGameLogic = gameLogic
+            continueGameButton.enabled = true
+        } else {
+            continueGameButton.enabled = false
+        }
+        
         if numPlayers != 0 {
             performSegueWithIdentifier("GameSegue", sender: self)
         }
@@ -31,9 +41,13 @@ class InitialScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindFromNewGame(sender: UIStoryboardSegue) {
+    @IBAction func unwindToMainScreen(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? NewGameViewController {
             numPlayers = sourceViewController.numPlayers
+        }
+        else if let sourceViewController = sender.sourceViewController as? GameViewController {
+            saveGame(sourceViewController.gameLogic)
+            numPlayers = 0 // this is so the game thing doesn't pop up again...
         }
     }
     
@@ -42,7 +56,24 @@ class InitialScreenViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navDestination = segue.destinationViewController as? UINavigationController,
            let destination = navDestination.topViewController as? GameViewController {
-            destination.receiveDataFromMainView(numPlayers, previousGameLogic: previousGameLogic)
+            if numPlayers != 0 {
+                destination.newGame(numPlayers)
+            } else {
+                destination.loadGame(previousGameLogic!)
+            }
+        }
+    }
+    
+    // MARK: NSCoding
+    func loadPreviousGame() -> YahtzeeGameLogic? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(
+            YahtzeeGameLogic.ArchiveURL.path!) as? YahtzeeGameLogic
+    }
+    
+    func saveGame(gameLogic: YahtzeeGameLogic) {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(gameLogic, toFile: YahtzeeGameLogic.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("oh, crap. this didn't work...")
         }
     }
 }

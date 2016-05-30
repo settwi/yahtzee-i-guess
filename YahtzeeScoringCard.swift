@@ -15,13 +15,22 @@ enum ScoringCardError: ErrorType {
 }
 
 
-class YahtzeeScoringCard {
-    // MARK: Scoring Card Properties
-    var topBoxes, bottomBoxes: [String:ScoringBox]
-    var topScores, bottomScores: [String:Int]
+class YahtzeeScoringCard: NSObject, NSCoding {
+    // MARK: Properties
+    var topBoxes, bottomBoxes: [String: ScoringBox]
+    var topScores, bottomScores: [String: Int]
     var yahtzees: Int
     
-    init() {
+    // MARK: Types
+    struct PropertyKey {
+        static let yahtzeesKey = "yahtzees"
+        static let topBoxesKey = "topBoxes"
+        static let bottomBoxesKey = "bottomBoxes"
+        static let topScoresKey = "topScores"
+        static let bottomScoresKey = "bottomScores"
+    }
+    
+    override init() {
         yahtzees = 0
         
         topBoxes = [:]
@@ -48,10 +57,12 @@ class YahtzeeScoringCard {
         for k in bottomBoxes.keys {
             bottomScores[k] = -1
         }
+        
+        super.init()
     }
 
-    func retrieveScores(dice: [Int]) -> [[String:Int]] {
-        var scorable: [[String:Int]] = [[:], [:]]
+    func retrieveScores(dice: [Int]) -> [[String: Int]] {
+        var scorable: [[String: Int]] = [[:], [:]]
         
         for (k, box) in topBoxes {
             if topScores[k] == -1 {
@@ -107,6 +118,24 @@ class YahtzeeScoringCard {
         let yahtzeeBonus = 100 * max(0, yahtzees - 1)
         
         return [topScore, topBonus, bottomScore, yahtzeeBonus]
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        topBoxes = aDecoder.decodeObjectForKey(
+            PropertyKey.topBoxesKey) as! [String: ScoringBox]
+        bottomBoxes = aDecoder.decodeObjectForKey(
+            PropertyKey.bottomBoxesKey) as! [String: ScoringBox]
+        yahtzees = aDecoder.decodeIntegerForKey(PropertyKey.yahtzeesKey)
+        topScores = aDecoder.decodeObjectForKey(PropertyKey.topScoresKey) as! [String: Int]
+        bottomScores = aDecoder.decodeObjectForKey(PropertyKey.bottomScoresKey) as! [String: Int]
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(topBoxes, forKey: PropertyKey.topBoxesKey)
+        aCoder.encodeObject(bottomBoxes, forKey: PropertyKey.bottomBoxesKey)
+        aCoder.encodeObject(topScores, forKey: PropertyKey.topScoresKey)
+        aCoder.encodeObject(bottomScores, forKey: PropertyKey.bottomScoresKey)
+        aCoder.encodeInteger(yahtzees, forKey: PropertyKey.yahtzeesKey)
     }
     
 }

@@ -13,18 +13,19 @@ class SelectDiceView: UIView {
     var diceButtons = [UIButton]()
     var defaultDiceImages = [UIImage]()
     var selectedDiceImages = [UIImage]()
-    var buttonsTapped = [Bool]()    // highlights buttons tapped. i guess
-    let numDice = 5
+    var buttonsSelected = [Bool]()    // highlights buttons tapped. i guess
+    let numDice = 6
+    let numDiceDisplayed = 5
     
     // MARK: Initialization
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        buttonsTapped = [false, false, false, false, false]
+        buttonsSelected = [false, false, false, false, false]
         defaultDiceImages = (1...numDice).map({ (i: Int) in UIImage(named: String(i))! })
         selectedDiceImages = (1...numDice).map({ (i: Int) in UIImage(named: "\(i)_selected")! })
         
-        for i in 0..<numDice {
+        for i in 0..<numDiceDisplayed {
             let button = UIButton()
             button.setImage(defaultDiceImages[i], forState: .Normal)
             button.setImage(defaultDiceImages[i], forState: .Disabled)
@@ -41,12 +42,13 @@ class SelectDiceView: UIView {
     }
 
     override func layoutSubviews() {
-        let buttonSize = Int(frame.size.width) / numDice
-        print(buttonSize)
+        let buttonSize = Int(frame.size.height)
+        // kinda temporary thing so yep deal with it
+        let xOffset = (Int(frame.size.width) - buttonSize * 5) / 2
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         for (i, button) in diceButtons.enumerate() {
-            buttonFrame.origin.x = CGFloat(i * buttonSize)
+            buttonFrame.origin.x = CGFloat(i * buttonSize) + CGFloat(xOffset)
             button.frame = buttonFrame
         }
 
@@ -54,33 +56,62 @@ class SelectDiceView: UIView {
     }
     
     override func intrinsicContentSize() -> CGSize {
-        let buttonSize = Int(frame.size.width) / numDice
-        let width = Int(frame.size.width)
+        let buttonSize = Int(frame.size.height)
+        let width = Int(frame.size.width) * numDiceDisplayed
         return CGSize(width: width, height: buttonSize)
     }
-    
+ 
     // MARK: Button Action
+    func toggleButtonEnabledState(enabled: Bool) {
+        for button in diceButtons {
+            button.alpha = enabled ? CGFloat(1) : CGFloat(0.4)
+            button.enabled = enabled
+        }
+    }
+    
     func dieTapped(button: UIButton) {
         let buttonIndex = diceButtons.indexOf(button)!
-        print("Pressed die \(buttonIndex)")
-        
-        buttonsTapped[buttonIndex] = !buttonsTapped[buttonIndex]
+        buttonsSelected[buttonIndex] = !buttonsSelected[buttonIndex]
         
         updateDiceSelectedStates()
     }
     
+    func unselectAllDice() {
+        buttonsSelected = [false, false, false, false, false]
+        updateDiceSelectedStates()
+    }
+    
     func updateDiceSelectedStates() {
-        for (i, tapped) in buttonsTapped.enumerate() {
+        for (i, tapped) in buttonsSelected.enumerate() {
             diceButtons[i].selected = tapped
         }
     }
     
     // MARK: Data transfer
     func updateDiceImagesFromYahtzeeDice(newDice: [Int]) {
-        for i in newDice.map({ $0 - 1 }) {
-            diceButtons[i].setImage(defaultDiceImages[i],
-                                    forState: [.Normal, .Disabled])
-            diceButtons[i].setImage(selectedDiceImages[i], forState: .Selected)
+        // assumes newDice.count == 5
+        for (buttonIndex, imgIndex) in newDice.map({ $0 - 1 }).enumerate() {
+            diceButtons[buttonIndex].setImage(defaultDiceImages[imgIndex], forState: .Normal)
+            diceButtons[buttonIndex].setImage(defaultDiceImages[imgIndex], forState: .Disabled)
+            diceButtons[buttonIndex].setImage(selectedDiceImages[imgIndex], forState: .Selected)
         }
+        
+        updateDiceSelectedStates()
+    }
+    
+    func updateDiceImagesFromYahtzeeDiceAnimated(newDice: [Int]) {
+        // if we have time, have something like this use an NSTimer to randomize some dice
+        /*
+        for _ in 0..<5 {
+            for buttonIndex in 0..<5 {
+                let imgIndex = Int(arc4random() % 6)
+                diceButtons[buttonIndex].setImage(defaultDiceImages[imgIndex], forState: .Normal)
+                diceButtons[buttonIndex].setImage(defaultDiceImages[imgIndex], forState: .Disabled)
+                diceButtons[buttonIndex].setImage(selectedDiceImages[imgIndex], forState: .Selected)
+            }
+        }
+        */
+        
+        updateDiceImagesFromYahtzeeDice(newDice)
     }
 }
