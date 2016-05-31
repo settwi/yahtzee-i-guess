@@ -24,7 +24,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yahtzee!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raE-jk-TGH">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzx-0x-wNq">
@@ -148,7 +148,6 @@
                                 <subviews>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-1u-ILq" customClass="SelectDiceView" customModule="yahtzee_i_guess" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
-                                        <color key="backgroundColor" red="0.0016834623899761869" green="0.13846001683424891" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="500" id="DEC-i6-jdN"/>
                                             <constraint firstAttribute="height" constant="100" id="MLW-mv-3FQ"/>
@@ -165,27 +164,23 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gbL-qc-1pA">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0i5-rI-oxf">
                                         <rect key="frame" x="0.0" y="60" width="560" height="476"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
+                                        <connections>
+                                            <segue destination="jhy-P0-V0t" kind="embed" id="hth-ZA-kOj"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gbL-qc-1pA" secondAttribute="trailing" id="AWJ-00-He1"/>
-                                    <constraint firstItem="gbL-qc-1pA" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="CGC-t6-BTy"/>
-                                    <constraint firstItem="gbL-qc-1pA" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="Ipy-bl-9fx"/>
-                                    <constraint firstItem="gbL-qc-1pA" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="THN-AP-Und"/>
-                                    <constraint firstAttribute="bottom" secondItem="gbL-qc-1pA" secondAttribute="bottom" id="bNq-FS-w1T"/>
-                                    <constraint firstItem="gbL-qc-1pA" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="bnD-Gb-wUL"/>
+                                    <constraint firstItem="0i5-rI-oxf" firstAttribute="leading" secondItem="Whg-Gj-VRf" secondAttribute="leading" id="Cbr-hc-5lk"/>
+                                    <constraint firstAttribute="trailing" secondItem="0i5-rI-oxf" secondAttribute="trailing" id="Y5W-sL-4vb"/>
                                     <constraint firstItem="hB9-1u-ILq" firstAttribute="top" secondItem="Whg-Gj-VRf" secondAttribute="top" id="hY0-tC-oly"/>
-                                    <constraint firstItem="gbL-qc-1pA" firstAttribute="leading" secondItem="Whg-Gj-VRf" secondAttribute="leading" id="nSg-r1-8gR"/>
+                                    <constraint firstAttribute="bottom" secondItem="0i5-rI-oxf" secondAttribute="bottom" id="r4y-0U-T5f"/>
+                                    <constraint firstItem="0i5-rI-oxf" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="rVz-9H-nzy"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="hY0-tC-oly"/>
-                                        <exclude reference="CGC-t6-BTy"/>
-                                        <exclude reference="THN-AP-Und"/>
-                                        <exclude reference="bnD-Gb-wUL"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -199,14 +194,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="OSC-2P-Z3u">
-                        <barButtonItem key="leftBarButtonItem" title="Roll" id="WWX-Da-RjG">
-                            <connections>
-                                <action selector="rollButtonPressed:" destination="vLZ-Zm-8wk" id="QRY-GF-47D"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="opk-SX-JX4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="opk-SX-JX4">
                             <connections>
                                 <segue destination="bEr-h2-bbs" kind="unwind" unwindAction="unwindToMainScreen:" id="u6z-v0-5zX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Roll" id="WWX-Da-RjG">
+                            <connections>
+                                <action selector="rollButtonPressed:" destination="vLZ-Zm-8wk" id="QRY-GF-47D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,7 +213,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRL-96-8aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bEr-h2-bbs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3063" y="1222"/>
+            <point key="canvasLocation" x="2151" y="1222"/>
+        </scene>
+        <!--Scorecard Table View Controller-->
+        <scene sceneID="QGo-si-3Oh">
+            <objects>
+                <tableViewController id="jhy-P0-V0t" customClass="ScorecardTableViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7RK-bB-eig">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="476"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreCell" id="fRb-bd-Hpb" customClass="ScorecardTableViewCell" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRb-bd-Hpb" id="JDy-tG-J3l">
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oh-jX-62O">
+                                            <rect key="frame" x="503" y="11" width="49" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-XO-WHK">
+                                            <rect key="frame" x="8" y="8" width="102" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="scoreLabel" destination="0Oh-jX-62O" id="r9Y-V7-aXK"/>
+                                    <outlet property="scoreTypeLabel" destination="MnO-XO-WHK" id="CR2-Jl-P5q"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jhy-P0-V0t" id="ecq-pv-3JT"/>
+                            <outlet property="delegate" destination="jhy-P0-V0t" id="6rp-HT-RVx"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9d-XZ-NDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="1297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJE-e6-aB9">
@@ -289,9 +330,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="kin-YQ-IgJ"/>
-                                        <exclude reference="exP-Nw-IR9"/>
                                         <exclude reference="KgF-tY-V9M"/>
+                                        <exclude reference="exP-Nw-IR9"/>
+                                        <exclude reference="kin-YQ-IgJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -331,17 +372,17 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="SMe-lZ-NWm"/>
                                 <exclude reference="Ruh-VP-XRS"/>
+                                <exclude reference="SMe-lZ-NWm"/>
+                                <exclude reference="3Ue-f0-69h"/>
+                                <exclude reference="CC1-41-ego"/>
                                 <exclude reference="ERI-dw-Gz8"/>
                                 <exclude reference="Mvb-HA-bKl"/>
-                                <exclude reference="3Ue-f0-69h"/>
                                 <exclude reference="RDp-5O-qXW"/>
                                 <exclude reference="S0b-5t-8HI"/>
-                                <exclude reference="CC1-41-ego"/>
                                 <exclude reference="neo-OC-55K"/>
-                                <exclude reference="jYf-hQ-5H5"/>
                                 <exclude reference="65C-dd-eTw"/>
+                                <exclude reference="jYf-hQ-5H5"/>
                             </mask>
                         </variation>
                     </view>
@@ -354,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TEr-Qv-x88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="1289"/>
+            <point key="canvasLocation" x="910" y="1297"/>
         </scene>
     </scenes>
 </document>
