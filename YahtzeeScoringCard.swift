@@ -19,11 +19,11 @@ class YahtzeeScoringCard: NSObject, NSCoding {
     // MARK: Properties
     var topBoxes, bottomBoxes: [String: ScoringBox]
     var topScores, bottomScores: [String: Int]
-    var yahtzees: Int
+    var yahtzeeBonuses: Int
     
     // MARK: Types
     struct PropertyKey {
-        static let yahtzeesKey = "yahtzees"
+        static let yahtzeesKey = "yahtzeeBonuses"
         static let topBoxesKey = "topBoxes"
         static let bottomBoxesKey = "bottomBoxes"
         static let topScoresKey = "topScores"
@@ -31,7 +31,7 @@ class YahtzeeScoringCard: NSObject, NSCoding {
     }
     
     override init() {
-        yahtzees = 0
+        yahtzeeBonuses = 0
         
         topBoxes = [:]
         for (i, name) in ["Ones", "Twos", "Threes", "Fours", "Fives", "Sixes"].enumerate() {
@@ -74,9 +74,6 @@ class YahtzeeScoringCard: NSObject, NSCoding {
             if bottomScores[k] == -1 {
                 scorable[1][k] = box.scoreDice(dice)
             }
-            if k == "YAHTZEE" && bottomScores[k] != 0 {
-                scorable[1][k] = box.scoreDice(dice)
-            }
         }
         
         return scorable
@@ -86,21 +83,20 @@ class YahtzeeScoringCard: NSObject, NSCoding {
         let inTopBoxes = topBoxes.keys.contains(which)
         let scorable = retrieveScores(dice)
         let scorableSide = inTopBoxes ? scorable[0] : scorable[1]
-        var score = topBoxes.keys.contains(which) ? topScores : bottomScores
         
         
-        if let potentialScore = scorableSide[which] {
-            if score[which] == -1 {
-                score[which] = potentialScore
+        if topBoxes.keys.contains(which) {
+            if topScores[which] == -1 {
+                topScores[which] = scorableSide[which]!
             }
-            else if which == "YAHTZEE" {
-                if score[which] == -1 {
-                    score[which] = scorableSide[which]
-                }
-                else if score[which] != 0 {
-                    score[which] = score[which]! + potentialScore
-                    self.yahtzees += 1
-                }
+            else {
+                throw ScoringCardError.AlreadyScoredBox
+            }
+        }
+            
+        else if bottomBoxes.keys.contains(which) {
+            if bottomScores[which] == -1 {
+                bottomScores[which] = scorableSide[which]!
             }
             else {
                 throw ScoringCardError.AlreadyScoredBox
@@ -109,13 +105,17 @@ class YahtzeeScoringCard: NSObject, NSCoding {
         else {
             throw ScoringCardError.UnknownScoringBox
         }
+
+        if bottomScores["YAHTZEE"] != 0 && bottomBoxes["YAHTZEE"]!.scoreDice(dice) != 0 {
+            yahtzeeBonuses += 1
+        }
     }
     
     func totalScore() -> [Int] {
         let topScore = topScores.values.filter({ $0 != -1 }).reduce(0, combine: +)
         let bottomScore = bottomScores.values.filter({ $0 != -1 }).reduce(0, combine: +)
         let topBonus = topScore >= 63 ? 35 : 0
-        let yahtzeeBonus = 100 * max(0, yahtzees - 1)
+        let yahtzeeBonus = 100 * yahtzeeBonuses
         
         return [topScore, topBonus, bottomScore, yahtzeeBonus]
     }
@@ -125,7 +125,7 @@ class YahtzeeScoringCard: NSObject, NSCoding {
             PropertyKey.topBoxesKey) as! [String: ScoringBox]
         bottomBoxes = aDecoder.decodeObjectForKey(
             PropertyKey.bottomBoxesKey) as! [String: ScoringBox]
-        yahtzees = aDecoder.decodeIntegerForKey(PropertyKey.yahtzeesKey)
+        yahtzeeBonuses = aDecoder.decodeIntegerForKey(PropertyKey.yahtzeesKey)
         topScores = aDecoder.decodeObjectForKey(PropertyKey.topScoresKey) as! [String: Int]
         bottomScores = aDecoder.decodeObjectForKey(PropertyKey.bottomScoresKey) as! [String: Int]
     }
@@ -135,7 +135,7 @@ class YahtzeeScoringCard: NSObject, NSCoding {
         aCoder.encodeObject(bottomBoxes, forKey: PropertyKey.bottomBoxesKey)
         aCoder.encodeObject(topScores, forKey: PropertyKey.topScoresKey)
         aCoder.encodeObject(bottomScores, forKey: PropertyKey.bottomScoresKey)
-        aCoder.encodeInteger(yahtzees, forKey: PropertyKey.yahtzeesKey)
+        aCoder.encodeInteger(yahtzeeBonuses, forKey: PropertyKey.yahtzeesKey)
     }
     
 }

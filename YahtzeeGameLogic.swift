@@ -35,8 +35,32 @@ class YahtzeeGameLogic: NSObject, NSCoding {
     var currentPlayer: Int { return turn + 1 }
     var numRounds: Int { return playersGone / numPlayers }
     var currentScoreCard: YahtzeeScoringCard { return scoreCards[turn] }
-    var potentialScores: [[String:Int]] { return currentScoreCard.retrieveScores(intDice) }
+    var currentTotalScore: [Int] { return currentScoreCard.totalScore() }   // todo: make a property
+    var potentialScores: [[String:Int]] {
+        return rollsRemaining == 3 ? [[:], [:]] :
+            currentScoreCard.retrieveScores(intDice)
+    }
     var intDice: [Int] { return dice.map({ $0.side }) }
+    var boxesAlreadyScoredForCurrentCard: [String: Int] {
+        var topScored = currentScoreCard.topScores
+        for (k, v) in topScored {
+            if v == -1 {
+                topScored.removeValueForKey(k)
+            }
+        }
+        
+        var bottomScored = currentScoreCard.bottomScores
+        for (k, v) in bottomScored {
+            if v == -1 {
+                bottomScored.removeValueForKey(k)
+            }
+        }
+        
+        var finalScored = topScored
+        for (k, v) in bottomScored { finalScored[k] = v }
+        
+        return finalScored
+    }
     
     // MARK: Archiving Paths
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(

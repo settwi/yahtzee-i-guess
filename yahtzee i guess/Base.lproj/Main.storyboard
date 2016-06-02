@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ku0-T2-077">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="2977" y="-411"/>
         </scene>
-        <!--Game-->
+        <!--yahtzee game view-->
         <scene sceneID="Fip-VZ-Ix8">
             <objects>
                 <viewController storyboardIdentifier="GameView" id="vLZ-Zm-8wk" customClass="GameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,8 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-Gj-VRf">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-Gj-VRf">
+                                <rect key="frame" x="20" y="84" width="560" height="496"/>
                                 <subviews>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-1u-ILq" customClass="SelectDiceView" customModule="yahtzee_i_guess" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
@@ -164,19 +164,241 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0i5-rI-oxf">
-                                        <rect key="frame" x="0.0" y="60" width="560" height="476"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPL-q6-DO0">
+                                        <rect key="frame" x="0.0" y="63" width="560" height="390"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-ri-16R">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="390"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-jM-IzF" customClass="TopScoringCardView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="60" width="280" height="270"/>
+                                                        <subviews>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-dn-2A6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <state key="normal" title="Scoring Card Top">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-Ah-riO" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="30" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Ones">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="jhl-ah-5Qr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-Ol-kPV" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="60" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Twos">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="nXf-2x-PWs"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9l-Ja-VDM" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="90" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Threes">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="aeo-Zw-Ng7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aM-rD-RTP" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="120" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Fours">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="NHE-2p-ZeR"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erD-21-j8s" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="150" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Fives">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="LO8-4x-fDg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-LO-w4M" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="180" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Sixes">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="DaB-Wo-uNs"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCY-Vh-dSW">
+                                                                <rect key="frame" x="0.0" y="210" width="280" height="30"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <state key="normal" title="Top Total">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USj-as-kn0">
+                                                                <rect key="frame" x="0.0" y="240" width="280" height="30"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                <state key="normal" title="Grand Total">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                        <connections>
+                                                            <outlet property="fivesButton" destination="erD-21-j8s" id="xm2-sh-8Cx"/>
+                                                            <outlet property="foursButton" destination="2aM-rD-RTP" id="1Ei-qa-j5U"/>
+                                                            <outlet property="grandTotalButton" destination="USj-as-kn0" id="iwD-fv-sYN"/>
+                                                            <outlet property="onesButton" destination="iPZ-Ah-riO" id="SxK-44-gUV"/>
+                                                            <outlet property="scoringCardTopButton" destination="NNq-dn-2A6" id="UQv-fR-qse"/>
+                                                            <outlet property="sixesButton" destination="5U5-LO-w4M" id="naX-gc-VX8"/>
+                                                            <outlet property="threesButton" destination="q9l-Ja-VDM" id="FCj-id-9ct"/>
+                                                            <outlet property="topTotalButton" destination="wCY-Vh-dSW" id="iyk-Yd-nCK"/>
+                                                            <outlet property="twosButton" destination="1vR-Ol-kPV" id="5x0-h0-EXB"/>
+                                                        </connections>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-bC-Nbm" customClass="BottomScoringCardView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                        <rect key="frame" x="280" y="60" width="280" height="270"/>
+                                                        <subviews>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fof-6m-JH3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <state key="normal" title="Scoring Card Bottom">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aas-d1-BII" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="30" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                <state key="normal" title="3 of A Kind">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="yUh-YQ-gRt"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF1-Gr-e9m" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="60" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="4 of A Kind">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="qgb-Na-7Sa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-67-46R" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="90" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Full House">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="Fgw-zD-caS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-QK-vu9" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="120" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Small Straight">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="qWc-XP-U0D"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-X1-c4B" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="150" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Large Straight">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="naW-fR-Qkl"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcN-ap-c3J" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="180" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="YAHTZEE">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="i0I-Aw-y02"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goN-Ts-ETW" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="210" width="280" height="30"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Chance">
+                                                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="ebk-Ba-3pw"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJa-i2-4bj">
+                                                                <rect key="frame" x="0.0" y="240" width="280" height="30"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <state key="normal" title="Bottom Total">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                        <connections>
+                                                            <outlet property="bottomTotalButton" destination="NJa-i2-4bj" id="Vdw-p6-0ou"/>
+                                                            <outlet property="chanceButton" destination="goN-Ts-ETW" id="cYU-tp-BzE"/>
+                                                            <outlet property="fourOfAKindButton" destination="RF1-Gr-e9m" id="o8h-Lr-V9I"/>
+                                                            <outlet property="fullHouseButton" destination="37P-67-46R" id="8Zh-9W-n89"/>
+                                                            <outlet property="lgStraightButton" destination="hsT-X1-c4B" id="7PG-dv-p3O"/>
+                                                            <outlet property="scoringCardBottomButton" destination="fof-6m-JH3" id="iGf-5A-Z6O"/>
+                                                            <outlet property="smStraightButton" destination="vkw-QK-vu9" id="rXt-69-7oD"/>
+                                                            <outlet property="threeOfAKindButton" destination="Aas-d1-BII" id="Qu0-ho-rgp"/>
+                                                            <outlet property="yahtzeeButton" destination="XcN-ap-c3J" id="hE6-Dn-GmS"/>
+                                                        </connections>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ovO-ri-16R" firstAttribute="leading" secondItem="LPL-q6-DO0" secondAttribute="leading" id="BEN-ue-CLA"/>
+                                            <constraint firstItem="ovO-ri-16R" firstAttribute="top" secondItem="LPL-q6-DO0" secondAttribute="top" id="DJa-bM-UPF"/>
+                                            <constraint firstAttribute="bottom" secondItem="ovO-ri-16R" secondAttribute="bottom" id="XId-gW-rn0"/>
+                                            <constraint firstAttribute="trailing" secondItem="ovO-ri-16R" secondAttribute="trailing" id="ekk-SM-enp"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSN-td-VUV">
+                                        <rect key="frame" x="0.0" y="456" width="560" height="40"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="n2T-hw-Gwj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Roll"/>
                                         <connections>
-                                            <segue destination="jhy-P0-V0t" kind="embed" id="hth-ZA-kOj"/>
+                                            <action selector="rollButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="aV6-Ze-Nky"/>
                                         </connections>
-                                    </containerView>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="0i5-rI-oxf" firstAttribute="leading" secondItem="Whg-Gj-VRf" secondAttribute="leading" id="Cbr-hc-5lk"/>
-                                    <constraint firstAttribute="trailing" secondItem="0i5-rI-oxf" secondAttribute="trailing" id="Y5W-sL-4vb"/>
+                                    <constraint firstItem="LPL-q6-DO0" firstAttribute="leading" secondItem="Whg-Gj-VRf" secondAttribute="leading" id="3Ya-fq-Ae7"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPL-q6-DO0" secondAttribute="trailing" id="Pem-7d-dl6"/>
+                                    <constraint firstItem="FSN-td-VUV" firstAttribute="top" secondItem="LPL-q6-DO0" secondAttribute="bottom" constant="3" id="bvD-rK-6dZ"/>
                                     <constraint firstItem="hB9-1u-ILq" firstAttribute="top" secondItem="Whg-Gj-VRf" secondAttribute="top" id="hY0-tC-oly"/>
-                                    <constraint firstAttribute="bottom" secondItem="0i5-rI-oxf" secondAttribute="bottom" id="r4y-0U-T5f"/>
-                                    <constraint firstItem="0i5-rI-oxf" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" id="rVz-9H-nzy"/>
+                                    <constraint firstItem="LPL-q6-DO0" firstAttribute="top" secondItem="hB9-1u-ILq" secondAttribute="bottom" constant="3" id="loc-Zq-nvG"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -187,79 +409,44 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UTl-6k-KEk" firstAttribute="top" secondItem="Whg-Gj-VRf" secondAttribute="bottom" constant="20" id="FLc-0p-ca7"/>
+                            <constraint firstItem="Whg-Gj-VRf" firstAttribute="top" secondItem="KqR-lC-Yng" secondAttribute="bottom" constant="20" id="Ye1-2P-ucK"/>
                             <constraint firstItem="Whg-Gj-VRf" firstAttribute="trailing" secondItem="puF-bZ-41T" secondAttribute="trailingMargin" id="Zgf-hF-dQe"/>
                             <constraint firstItem="UTl-6k-KEk" firstAttribute="top" secondItem="Whg-Gj-VRf" secondAttribute="bottom" id="dEx-CQ-w1K"/>
                             <constraint firstItem="Whg-Gj-VRf" firstAttribute="top" secondItem="KqR-lC-Yng" secondAttribute="bottom" id="fQy-kC-6EH"/>
                             <constraint firstItem="Whg-Gj-VRf" firstAttribute="leading" secondItem="puF-bZ-41T" secondAttribute="leadingMargin" id="pUp-ZW-Rv6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fQy-kC-6EH"/>
+                                <exclude reference="dEx-CQ-w1K"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Game" id="OSC-2P-Z3u">
+                    <navigationItem key="navigationItem" title="yahtzee game view" id="OSC-2P-Z3u">
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="opk-SX-JX4">
                             <connections>
                                 <segue destination="bEr-h2-bbs" kind="unwind" unwindAction="unwindToMainScreen:" id="u6z-v0-5zX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Roll" id="WWX-Da-RjG">
+                        <barButtonItem key="rightBarButtonItem" title="Next Turn" id="iQM-6t-n6q">
                             <connections>
-                                <action selector="rollButtonPressed:" destination="vLZ-Zm-8wk" id="QRY-GF-47D"/>
+                                <action selector="nextTurnButtonPressed:" destination="vLZ-Zm-8wk" id="Zf0-sl-mwe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomScoringCard" destination="V8i-bC-Nbm" id="Ypg-PS-VHf"/>
                         <outlet property="diceView" destination="hB9-1u-ILq" id="Sdl-hz-oeN"/>
-                        <outlet property="rollButton" destination="WWX-Da-RjG" id="pFY-DL-f7T"/>
+                        <outlet property="nextTurnButton" destination="iQM-6t-n6q" id="uZL-tc-sJ9"/>
+                        <outlet property="rollButton" destination="FSN-td-VUV" id="prI-xW-FlX"/>
+                        <outlet property="topScoringCard" destination="uDL-jM-IzF" id="7wQ-BP-b8P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRL-96-8aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bEr-h2-bbs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2151" y="1222"/>
-        </scene>
-        <!--Scorecard Table View Controller-->
-        <scene sceneID="QGo-si-3Oh">
-            <objects>
-                <tableViewController id="jhy-P0-V0t" customClass="ScorecardTableViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7RK-bB-eig">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="476"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreCell" id="fRb-bd-Hpb" customClass="ScorecardTableViewCell" customModule="yahtzee_i_guess" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="560" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRb-bd-Hpb" id="JDy-tG-J3l">
-                                    <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Oh-jX-62O">
-                                            <rect key="frame" x="503" y="11" width="49" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-XO-WHK">
-                                            <rect key="frame" x="8" y="8" width="102" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="scoreLabel" destination="0Oh-jX-62O" id="r9Y-V7-aXK"/>
-                                    <outlet property="scoreTypeLabel" destination="MnO-XO-WHK" id="CR2-Jl-P5q"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jhy-P0-V0t" id="ecq-pv-3JT"/>
-                            <outlet property="delegate" destination="jhy-P0-V0t" id="6rp-HT-RVx"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K9d-XZ-NDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2932" y="1297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJE-e6-aB9">
@@ -278,124 +465,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="des-fW-Pmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2151" y="415"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RRl-rJ-VuR">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ku0-T2-077" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fdH-Sk-VAZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZaC-PX-RF6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="twg-aq-Xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1339" y="-411"/>
-        </scene>
-        <!--Game-->
-        <scene sceneID="M3a-ck-rvc">
-            <objects>
-                <viewController storyboardIdentifier="GameViewOld" id="Wyh-yh-mQp" customClass="GameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="P9M-Y1-4lO"/>
-                        <viewControllerLayoutGuide type="bottom" id="q8o-fI-VsA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gvt-jy-OxU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11S-3S-las">
-                                <rect key="frame" x="20" y="534" width="560" height="46"/>
-                                <color key="backgroundColor" red="0.87449919870000004" green="0.87449919870000004" blue="0.87449919870000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Roll"/>
-                                <connections>
-                                    <action selector="rollButtonPressed:" destination="Wyh-yh-mQp" eventType="touchUpInside" id="v5T-jv-cIR"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3a-7B-zmp" customClass="SelectDiceView" customModule="yahtzee_i_guess" customModuleProvider="target">
-                                <rect key="frame" x="20" y="28" width="560" height="50"/>
-                                <color key="backgroundColor" red="0.0016834623899999999" green="0.1384600168" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8x3-x7-dyP"/>
-                                    <constraint firstAttribute="height" constant="30" id="KgF-tY-V9M"/>
-                                    <constraint firstAttribute="height" constant="100" id="exP-Nw-IR9"/>
-                                    <constraint firstAttribute="width" constant="500" id="kin-YQ-IgJ"/>
-                                    <constraint firstAttribute="height" priority="750" constant="50" id="vKv-In-62O"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="KgF-tY-V9M"/>
-                                        <exclude reference="exP-Nw-IR9"/>
-                                        <exclude reference="kin-YQ-IgJ"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N3Z-J4-wks">
-                                <rect key="frame" x="20" y="86" width="560" height="440"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="L3a-7B-zmp" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="1Sf-72-RNM"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="leading" secondItem="gvt-jy-OxU" secondAttribute="leading" id="3Ue-f0-69h"/>
-                            <constraint firstItem="11S-3S-las" firstAttribute="leading" secondItem="gvt-jy-OxU" secondAttribute="leadingMargin" id="65C-dd-eTw"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="leading" secondItem="gvt-jy-OxU" secondAttribute="leadingMargin" id="8z0-b9-Rb4"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="CC1-41-ego"/>
-                            <constraint firstItem="L3a-7B-zmp" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="DS9-27-x4I"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="leading" secondItem="L3a-7B-zmp" secondAttribute="leading" id="ERI-dw-Gz8"/>
-                            <constraint firstItem="11S-3S-las" firstAttribute="leading" secondItem="gvt-jy-OxU" secondAttribute="leadingMargin" id="LQk-7t-5Se"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="Mvb-HA-bKl"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="NIf-lU-lez"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="top" secondItem="L3a-7B-zmp" secondAttribute="bottom" constant="8" symbolic="YES" id="QdY-qP-dbW"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="RDp-5O-qXW"/>
-                            <constraint firstAttribute="bottom" secondItem="L3a-7B-zmp" secondAttribute="bottom" constant="500" id="Ruh-VP-XRS"/>
-                            <constraint firstAttribute="trailing" secondItem="N3Z-J4-wks" secondAttribute="trailing" id="S0b-5t-8HI"/>
-                            <constraint firstAttribute="bottom" secondItem="L3a-7B-zmp" secondAttribute="bottom" constant="428" id="SMe-lZ-NWm"/>
-                            <constraint firstItem="11S-3S-las" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="VS8-Il-501"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="N3Z-J4-wks" secondAttribute="trailing" id="XSB-lX-PJp"/>
-                            <constraint firstItem="L3a-7B-zmp" firstAttribute="centerX" secondItem="gvt-jy-OxU" secondAttribute="centerX" id="Zrc-xH-43C"/>
-                            <constraint firstItem="q8o-fI-VsA" firstAttribute="top" secondItem="11S-3S-las" secondAttribute="bottom" constant="20" id="aEn-64-Ch6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L3a-7B-zmp" secondAttribute="trailing" id="ed5-Ad-kvg"/>
-                            <constraint firstItem="11S-3S-las" firstAttribute="top" secondItem="N3Z-J4-wks" secondAttribute="bottom" constant="8" symbolic="YES" id="f9H-EG-B8J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="11S-3S-las" secondAttribute="trailing" id="jYf-hQ-5H5"/>
-                            <constraint firstItem="L3a-7B-zmp" firstAttribute="leading" secondItem="gvt-jy-OxU" secondAttribute="leadingMargin" id="kvT-xe-3QG"/>
-                            <constraint firstItem="N3Z-J4-wks" firstAttribute="trailing" secondItem="L3a-7B-zmp" secondAttribute="trailing" id="neo-OC-55K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="11S-3S-las" secondAttribute="trailing" id="sRS-qy-GTN"/>
-                            <constraint firstItem="L3a-7B-zmp" firstAttribute="top" secondItem="P9M-Y1-4lO" secondAttribute="bottom" constant="8" symbolic="YES" id="wm2-fL-Ht9"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ruh-VP-XRS"/>
-                                <exclude reference="SMe-lZ-NWm"/>
-                                <exclude reference="3Ue-f0-69h"/>
-                                <exclude reference="CC1-41-ego"/>
-                                <exclude reference="ERI-dw-Gz8"/>
-                                <exclude reference="Mvb-HA-bKl"/>
-                                <exclude reference="RDp-5O-qXW"/>
-                                <exclude reference="S0b-5t-8HI"/>
-                                <exclude reference="neo-OC-55K"/>
-                                <exclude reference="65C-dd-eTw"/>
-                                <exclude reference="jYf-hQ-5H5"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Game" id="PJW-cd-FoY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CeD-RK-lta"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="diceView" destination="L3a-7B-zmp" id="JJR-XI-dH0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TEr-Qv-x88" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="910" y="1297"/>
         </scene>
     </scenes>
 </document>

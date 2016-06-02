@@ -16,14 +16,13 @@ class InitialScreenViewController: UIViewController {
     var previousGameLogic: YahtzeeGameLogic?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // TEMPORARY
-        // is it though
+
         if let gameLogic = loadPreviousGame() {
             previousGameLogic = gameLogic
             continueGameButton.enabled = true

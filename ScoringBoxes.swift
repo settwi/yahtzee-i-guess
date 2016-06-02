@@ -1,3 +1,4 @@
+
 //
 //  ScoringBoxes.swift
 //  yahtzee i guess
@@ -142,7 +143,7 @@ class SmallStraightScoringBox: ScoringBox {
         }
         
         for i in 0..<3 {
-            if uniqueDice[i+1] - uniqueDice[1] != 1 {
+            if uniqueDice[i+1] - uniqueDice[i] != 1 {
                 return 0
             }
         }
