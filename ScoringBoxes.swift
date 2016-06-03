@@ -136,8 +136,8 @@ class FullHouseScoringBox: ScoringBox {
 
 class SmallStraightScoringBox: ScoringBox {
     override func scoreDice(dice: [Int]) -> Int {
-        let uniqueDice = Array(Set(dice)).sort()
-        
+        let uniqueDice = [Int] (Set(dice)).sort()
+
         if uniqueDice.count < 4 {
             return 0
         }

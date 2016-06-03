@@ -23,6 +23,7 @@ class GameOverTableViewController: UITableViewController {
                 maxCard = card
             }
         }
+
         maxScoreIndex = scoreCards.indexOf(maxCard)!
         super.viewDidLoad()
     }
@@ -60,7 +61,7 @@ class GameOverTableViewController: UITableViewController {
             cell.yahtzeeBonusLabel.textColor = UIColor.blueColor()
             cell.grandTotalLabel.textColor = UIColor.blueColor()
         }
-        
+
         return cell
     }
 }

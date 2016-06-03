@@ -108,6 +108,8 @@ class GameViewController: UIViewController {
         
         diceView.unselectAllDice()
         diceView.updateDiceImagesFromYahtzeeDiceAnimated(gameLogic.intDice)
+        
+        //Hey buddy pal, I hope you're having a great day
     }
     
     @IBAction func scoreButtonPressed(button: ScoreButton) {
@@ -119,7 +121,7 @@ class GameViewController: UIViewController {
         else if gameLogic.potentialScores[1].keys.contains(key) {
              scoreVal = gameLogic.potentialScores[1][key]!
         }
-        
+
         let alertCtl = UIAlertController(title: "Score?",
             message: "Would you like to score \(button.scoreType) for \(scoreVal) points?", preferredStyle: .Alert)
         let yesButton = UIAlertAction(title: "Yes", style: .Default, handler: { (_: UIAlertAction) in
@@ -128,7 +130,7 @@ class GameViewController: UIViewController {
         let noButton = UIAlertAction(title: "No", style: .Default, handler: nil)
         alertCtl.addAction(yesButton)
         alertCtl.addAction(noButton)
-        
+    
         presentViewController(alertCtl, animated: true, completion: nil)
     }
     

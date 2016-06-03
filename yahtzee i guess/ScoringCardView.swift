@@ -16,6 +16,7 @@ class ScoringCardView: UIStackView {
         modifyButtonsForAlreadyScored(previouslyScored)
     }
     
+    // MARK: Butons
     func resetAllButtonsForNewTurn() {
         for button in scoreButtons {
             button.prepareForNewTurn()
