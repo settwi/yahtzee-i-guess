@@ -56,7 +56,9 @@ class InitialScreenViewController: UIViewController {
         if let navDestination = segue.destinationViewController as? UINavigationController,
            let destination = navDestination.topViewController as? GameViewController {
             if numPlayers != 0 {
-                destination.newGame(numPlayers)
+                let localNumPlayers = numPlayers
+                numPlayers = 0 // so that it doesn't flip flop when unloading game view
+                destination.newGame(localNumPlayers)
             } else {
                 destination.loadGame(previousGameLogic!)
             }

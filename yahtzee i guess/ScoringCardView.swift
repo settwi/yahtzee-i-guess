@@ -53,25 +53,26 @@ class ScoringCardView: UIStackView {
     func updateButtonTitlesFromNewScores(scores: [String: Int], previouslyScored: [String: Int]) {
         resetAllButtonsForNewTurn()
         modifyButtonsForAlreadyScored(previouslyScored)
-        if scores.isEmpty {
-            for button in scoreButtons {
-                if previouslyScored.keys.contains(button.scoreType) {
-                    button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)",
-                                    forState: [.Normal, .Disabled])
-                    button.alpha = CGFloat(0.4)
-                    button.enabled = false
-                }
-                else {
-                    button.setTitle(button.scoreType, forState: [.Normal, .Disabled])
-                }
+        for button in scoreButtons {
+            if previouslyScored.keys.contains(button.scoreType) {
+                button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)",
+                                forState: [.Normal, .Disabled])
+                button.enabled = false
+            }
+            else {
+                button.setTitle(button.scoreType, forState: [.Normal, .Disabled])
             }
         }
-        else {
+        
+        if !scores.isEmpty {
             for (scoreId, scoreVal) in scores {
                 let buttonToScore = buttonFromScoreId(scoreId)
                 if let button = buttonToScore {
                     button.setTitle("\(scoreId) - \(scoreVal)", forState: .Normal)
                     if button.boxScored || previouslyScored.keys.contains(button.scoreType) {
+                        button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)",
+                                        forState: [.Normal, .Disabled])
+                        button.enabled = false
                         button.solidifyScoreForRound()
                     }
                 }

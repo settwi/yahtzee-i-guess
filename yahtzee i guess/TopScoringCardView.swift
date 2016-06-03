@@ -56,4 +56,9 @@ class TopScoringCardView: ScoringCardView {
             return nil
         }
     }
+    
+    func updateScoreBoxes(topTotal: Int, grandTotal: Int) {
+        topTotalButton.setTitle("Top Total - \(topTotal)", forState: .Normal)
+        grandTotalButton.setTitle("Grand Total - \(grandTotal)", forState: .Normal)
+    }
 }

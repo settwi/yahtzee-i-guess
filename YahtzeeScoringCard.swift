@@ -106,7 +106,7 @@ class YahtzeeScoringCard: NSObject, NSCoding {
             throw ScoringCardError.UnknownScoringBox
         }
 
-        if bottomScores["YAHTZEE"] != 0 && bottomBoxes["YAHTZEE"]!.scoreDice(dice) != 0 {
+        if which != "YAHTZEE" && bottomScores["YAHTZEE"] != 0 && bottomBoxes["YAHTZEE"]!.scoreDice(dice) != 0 {
             yahtzeeBonuses += 1
         }
     }
