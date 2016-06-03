@@ -199,11 +199,16 @@ class GameViewController: UIViewController {
     }
     
     func handleGameOver() {
-        let alertCtl = UIAlertController(title: "Game Over", message: "This doesn't do anything yet.", preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        
-        alertCtl.addAction(defaultAction)
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        presentViewController(alertCtl, animated: true, completion: nil)
+        performSegueWithIdentifier("GameOverSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GameOverSegue" {
+            if let destinationNav = segue.destinationViewController as? UINavigationController {
+                if let gameOverTableView = destinationNav.topViewController as? GameOverTableViewController {
+                    gameOverTableView.scoreCards = gameLogic.scoreCards
+                }
+            }
+        }
     }
 }

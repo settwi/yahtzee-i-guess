@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26073D8D1CFFBA9700CA3A9D /* ScoringCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26073D8C1CFFBA9700CA3A9D /* ScoringCardView.swift */; };
+		262448FE1D01DD6200F53F17 /* GameOverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262448FD1D01DD6200F53F17 /* GameOverTableViewController.swift */; };
+		262449001D01DD9700F53F17 /* GameOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262448FF1D01DD9700F53F17 /* GameOverTableViewCell.swift */; };
 		2642D3A21CFF5FF100490276 /* TopScoringCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642D3A11CFF5FF100490276 /* TopScoringCardView.swift */; };
 		2642D3A41CFF665900490276 /* ScoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642D3A31CFF665900490276 /* ScoreButton.swift */; };
 		2642D3A61CFF69F000490276 /* BottomScoringCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2642D3A51CFF69F000490276 /* BottomScoringCardView.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		26073D8C1CFFBA9700CA3A9D /* ScoringCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringCardView.swift; sourceTree = "<group>"; };
+		262448FD1D01DD6200F53F17 /* GameOverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverTableViewController.swift; sourceTree = "<group>"; };
+		262448FF1D01DD9700F53F17 /* GameOverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverTableViewCell.swift; sourceTree = "<group>"; };
 		263D3ADB1CF4C7F600B9B5DE /* ScoringBoxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringBoxes.swift; sourceTree = "<group>"; };
 		2642D3A11CFF5FF100490276 /* TopScoringCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopScoringCardView.swift; sourceTree = "<group>"; };
 		2642D3A31CFF665900490276 /* ScoreButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreButton.swift; sourceTree = "<group>"; };
@@ -82,6 +86,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262448FA1D01DCAB00F53F17 /* Initial Screens */ = {
+			isa = PBXGroup;
+			children = (
+				267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */,
+				26A44B671CEF9E690061634C /* InitialScreenViewController.swift */,
+			);
+			name = "Initial Screens";
+			sourceTree = "<group>";
+		};
+		262448FB1D01DCC100F53F17 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				26A44B691CEF9E690061634C /* Main.storyboard */,
+				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		262448FC1D01DCE500F53F17 /* Game View Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				267D2BF61CF8D68E00B1B91C /* GameViewController.swift */,
+				26073D8C1CFFBA9700CA3A9D /* ScoringCardView.swift */,
+				2642D3A11CFF5FF100490276 /* TopScoringCardView.swift */,
+				2642D3A51CFF69F000490276 /* BottomScoringCardView.swift */,
+				2642D3A31CFF665900490276 /* ScoreButton.swift */,
+				262448FD1D01DD6200F53F17 /* GameOverTableViewController.swift */,
+				262448FF1D01DD9700F53F17 /* GameOverTableViewCell.swift */,
+			);
+			name = "Game View Stuff";
+			sourceTree = "<group>";
+		};
 		267080861CF6287300B53E35 /* logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,18 +153,12 @@
 		26A44B641CEF9E690061634C /* yahtzee i guess */ = {
 			isa = PBXGroup;
 			children = (
-				26A44B711CEF9E690061634C /* Info.plist */,
-				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
-				26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */,
+				262448FC1D01DCE500F53F17 /* Game View Stuff */,
+				262448FA1D01DCAB00F53F17 /* Initial Screens */,
+				262448FB1D01DCC100F53F17 /* Storyboards */,
 				26A44B651CEF9E690061634C /* AppDelegate.swift */,
-				267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */,
-				26A44B671CEF9E690061634C /* InitialScreenViewController.swift */,
-				26A44B691CEF9E690061634C /* Main.storyboard */,
-				267D2BF61CF8D68E00B1B91C /* GameViewController.swift */,
-				26073D8C1CFFBA9700CA3A9D /* ScoringCardView.swift */,
-				2642D3A11CFF5FF100490276 /* TopScoringCardView.swift */,
-				2642D3A51CFF69F000490276 /* BottomScoringCardView.swift */,
-				2642D3A31CFF665900490276 /* ScoreButton.swift */,
+				26A44B6C1CEF9E690061634C /* Assets.xcassets */,
+				26A44B711CEF9E690061634C /* Info.plist */,
 			);
 			path = "yahtzee i guess";
 			sourceTree = "<group>";
@@ -245,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262449001D01DD9700F53F17 /* GameOverTableViewCell.swift in Sources */,
 				267080881CF628FD00B53E35 /* YahtzeeScoringCard.swift in Sources */,
+				262448FE1D01DD6200F53F17 /* GameOverTableViewController.swift in Sources */,
 				26A44B681CEF9E690061634C /* InitialScreenViewController.swift in Sources */,
 				267D2BF51CF8A78700B1B91C /* NewGameViewController.swift in Sources */,
 				267DB8EB1CF734C000CF1762 /* ScoringBoxes.swift in Sources */,

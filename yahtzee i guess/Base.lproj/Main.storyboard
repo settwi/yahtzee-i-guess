@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="-411"/>
+            <point key="canvasLocation" x="-3733" y="-1675"/>
         </scene>
         <!--Number of Players-->
         <scene sceneID="77z-go-LWM">
@@ -111,7 +111,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yp-Mk-WK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aJE-ED-zsv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3793" y="-411"/>
+            <point key="canvasLocation" x="-1879" y="-1675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nT3-kl-eA5">
@@ -129,7 +129,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCy-GT-vyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="-411"/>
+            <point key="canvasLocation" x="-2695" y="-1675"/>
         </scene>
         <!--yahtzee game view-->
         <scene sceneID="Fip-VZ-Ix8">
@@ -384,10 +384,16 @@
                                         <rect key="frame" x="0.0" y="456" width="560" height="40"/>
                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="Hrg-KU-wpc"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="n2T-hw-Gwj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Roll"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="n2T-hw-Gwj"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="rollButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="aV6-Ze-Nky"/>
                                         </connections>
@@ -441,12 +447,130 @@
                         <outlet property="nextTurnButton" destination="iQM-6t-n6q" id="uZL-tc-sJ9"/>
                         <outlet property="rollButton" destination="FSN-td-VUV" id="prI-xW-FlX"/>
                         <outlet property="topScoringCard" destination="uDL-jM-IzF" id="7wQ-BP-b8P"/>
+                        <segue destination="eUn-hl-kbQ" kind="presentation" identifier="GameOverSegue" id="do9-aw-Rcy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRL-96-8aQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bEr-h2-bbs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="1222"/>
+            <point key="canvasLocation" x="-3733" y="-4"/>
+        </scene>
+        <!--Game Over-->
+        <scene sceneID="y1s-wA-MNg">
+            <objects>
+                <tableViewController id="Rgh-gZ-CP9" customClass="GameOverTableViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="28" sectionFooterHeight="28" id="hK2-te-Dl2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameOverCellID" rowHeight="169" id="YAb-89-5fG" customClass="GameOverTableViewCell" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="169"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YAb-89-5fG" id="geT-5A-fKc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I5A-Tu-efA">
+                                            <rect key="frame" x="8" y="12" width="136" height="144"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sZ-Nl-9as">
+                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="kuk-G1-Kxb"/>
+                                                        <constraint firstAttribute="width" constant="67" id="uhH-Gj-VlM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="kuk-G1-Kxb"/>
+                                                            <exclude reference="uhH-Gj-VlM"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-zf-tq5">
+                                                    <rect key="frame" x="0.0" y="24" width="136" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-e9-sKF">
+                                                    <rect key="frame" x="0.0" y="48" width="136" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a5-KS-qn5">
+                                                    <rect key="frame" x="0.0" y="72" width="136" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-v7-1zT">
+                                                    <rect key="frame" x="0.0" y="96" width="136" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="U1g-d8-jGd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="U1g-d8-jGd"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total - X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-ly-T46">
+                                                    <rect key="frame" x="0.0" y="120" width="136" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="159" id="j0L-fa-Nfk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="j0L-fa-Nfk"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I5A-Tu-efA" firstAttribute="leading" secondItem="geT-5A-fKc" secondAttribute="leadingMargin" id="APQ-J3-wxZ"/>
+                                        <constraint firstItem="I5A-Tu-efA" firstAttribute="centerY" secondItem="geT-5A-fKc" secondAttribute="centerY" id="vyx-r1-0wU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bottomScoreLabel" destination="3Qc-e9-sKF" id="WOm-YF-Loo"/>
+                                    <outlet property="grandTotalLabel" destination="Xg8-ly-T46" id="gZ2-3T-2NK"/>
+                                    <outlet property="playerLabel" destination="2sZ-Nl-9as" id="yr3-Om-g2H"/>
+                                    <outlet property="topBonusLabel" destination="0a5-KS-qn5" id="Dr1-ZQ-EWK"/>
+                                    <outlet property="topScoreLabel" destination="E8d-zf-tq5" id="J4c-pk-vlF"/>
+                                    <outlet property="yahtzeeBonusLabel" destination="D5e-v7-1zT" id="Cyj-of-S3v"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rgh-gZ-CP9" id="fIL-eU-okM"/>
+                            <outlet property="delegate" destination="Rgh-gZ-CP9" id="iCI-4k-r5C"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Game Over" id="n1f-2R-RTd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pe8-EU-m4N">
+                            <connections>
+                                <segue destination="sHK-hM-6rb" kind="unwind" unwindAction="unwindToMainScreen:" id="85k-kd-Pn1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9y-ZM-YeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sHK-hM-6rb" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1879" y="-4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJE-e6-aB9">
@@ -464,7 +588,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="des-fW-Pmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="415"/>
+            <point key="canvasLocation" x="-3733" y="-849"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7HL-JB-swU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eUn-hl-kbQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7W7-hd-pTz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rgh-gZ-CP9" kind="relationship" relationship="rootViewController" id="7fq-t7-K8D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dd-Wm-nvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2695" y="-4"/>
         </scene>
     </scenes>
 </document>

@@ -48,6 +48,9 @@ class InitialScreenViewController: UIViewController {
             saveGame(sourceViewController.gameLogic)
             numPlayers = 0 // this is so the game thing doesn't pop up again...
         }
+        else if sender.sourceViewController is GameOverTableViewController {
+            navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
     
     // MARK: - Navigation
