@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26A44B611CEF9E690061634C"
-               BuildableName = "yahtzee i guess.app"
-               BlueprintName = "yahtzee i guess"
-               ReferencedContainer = "container:yahtzee i guess.xcodeproj">
+               BuildableName = "whatzee.app"
+               BlueprintName = "whatzee"
+               ReferencedContainer = "container:whatzee.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26A44B751CEF9E690061634C"
-               BuildableName = "yahtzee i guessTests.xctest"
-               BlueprintName = "yahtzee i guessTests"
-               ReferencedContainer = "container:yahtzee i guess.xcodeproj">
+               BuildableName = "whatzee.xctest"
+               BlueprintName = "whatzeeTests"
+               ReferencedContainer = "container:whatzee.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26A44B611CEF9E690061634C"
-            BuildableName = "yahtzee i guess.app"
-            BlueprintName = "yahtzee i guess"
-            ReferencedContainer = "container:yahtzee i guess.xcodeproj">
+            BuildableName = "whatzee.app"
+            BlueprintName = "whatzee"
+            ReferencedContainer = "container:whatzee.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26A44B611CEF9E690061634C"
-            BuildableName = "yahtzee i guess.app"
-            BlueprintName = "yahtzee i guess"
-            ReferencedContainer = "container:yahtzee i guess.xcodeproj">
+            BuildableName = "whatzee.app"
+            BlueprintName = "whatzee"
+            ReferencedContainer = "container:whatzee.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26A44B611CEF9E690061634C"
-            BuildableName = "yahtzee i guess.app"
-            BlueprintName = "yahtzee i guess"
-            ReferencedContainer = "container:yahtzee i guess.xcodeproj">
+            BuildableName = "whatzee.app"
+            BlueprintName = "whatzee"
+            ReferencedContainer = "container:whatzee.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -54,14 +54,14 @@
 		267D2BF41CF8A78700B1B91C /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		267D2BF61CF8D68E00B1B91C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		267D2BF81CF9EC5D00B1B91C /* SelectDiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDiceView.swift; sourceTree = "<group>"; };
-		26A44B621CEF9E690061634C /* yahtzee i guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yahtzee i guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A44B621CEF9E690061634C /* whatzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatzee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B651CEF9E690061634C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26A44B671CEF9E690061634C /* InitialScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreenViewController.swift; sourceTree = "<group>"; };
 		26A44B6A1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26A44B6C1CEF9E690061634C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26A44B6F1CEF9E690061634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26A44B711CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yahtzee i guessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A44B761CEF9E690061634C /* whatzee.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whatzee.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yahtzee_i_guessTests.swift; sourceTree = "<group>"; };
 		26A44B7C1CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		467AC4561CF7515F00431C0C /* YahtzeeGameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahtzeeGameLogic.swift; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 		26A44B631CEF9E690061634C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26A44B621CEF9E690061634C /* yahtzee i guess.app */,
-				26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */,
+				26A44B621CEF9E690061634C /* whatzee.app */,
+				26A44B761CEF9E690061634C /* whatzee.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26A44B611CEF9E690061634C /* yahtzee i guess */ = {
+		26A44B611CEF9E690061634C /* whatzee */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guess" */;
+			buildConfigurationList = 26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "whatzee" */;
 			buildPhases = (
 				26A44B5E1CEF9E690061634C /* Sources */,
 				26A44B5F1CEF9E690061634C /* Frameworks */,
@@ -187,14 +187,14 @@
 			);
 			dependencies = (
 			);
-			name = "yahtzee i guess";
+			name = whatzee;
 			productName = "yahtzee i guess";
-			productReference = 26A44B621CEF9E690061634C /* yahtzee i guess.app */;
+			productReference = 26A44B621CEF9E690061634C /* whatzee.app */;
 			productType = "com.apple.product-type.application";
 		};
-		26A44B751CEF9E690061634C /* yahtzee i guessTests */ = {
+		26A44B751CEF9E690061634C /* whatzeeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guessTests" */;
+			buildConfigurationList = 26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "whatzeeTests" */;
 			buildPhases = (
 				26A44B721CEF9E690061634C /* Sources */,
 				26A44B731CEF9E690061634C /* Frameworks */,
@@ -205,9 +205,9 @@
 			dependencies = (
 				26A44B781CEF9E690061634C /* PBXTargetDependency */,
 			);
-			name = "yahtzee i guessTests";
+			name = whatzeeTests;
 			productName = "yahtzee i guessTests";
-			productReference = 26A44B761CEF9E690061634C /* yahtzee i guessTests.xctest */;
+			productReference = 26A44B761CEF9E690061634C /* whatzee.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "yahtzee i guess" */;
+			buildConfigurationList = 26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "whatzee" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,8 +244,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26A44B611CEF9E690061634C /* yahtzee i guess */,
-				26A44B751CEF9E690061634C /* yahtzee i guessTests */,
+				26A44B611CEF9E690061634C /* whatzee */,
+				26A44B751CEF9E690061634C /* whatzeeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,7 +310,7 @@
 /* Begin PBXTargetDependency section */
 		26A44B781CEF9E690061634C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 26A44B611CEF9E690061634C /* yahtzee i guess */;
+			target = 26A44B611CEF9E690061634C /* whatzee */;
 			targetProxy = 26A44B771CEF9E690061634C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,7 +428,7 @@
 				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = whatzee;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -441,7 +441,7 @@
 				INFOPLIST_FILE = "yahtzee i guess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guess";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = whatzee;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -453,8 +453,8 @@
 				INFOPLIST_FILE = "yahtzee i guessTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guessTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yahtzee i guess.app/yahtzee i guess";
+				PRODUCT_NAME = whatzee;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whatzee.app/whatzee";
 			};
 			name = Debug;
 		};
@@ -465,15 +465,15 @@
 				INFOPLIST_FILE = "yahtzee i guessTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.settwi.yahtzee-i-guessTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yahtzee i guess.app/yahtzee i guess";
+				PRODUCT_NAME = whatzee;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whatzee.app/whatzee";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "yahtzee i guess" */ = {
+		26A44B5D1CEF9E690061634C /* Build configuration list for PBXProject "whatzee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26A44B7D1CEF9E690061634C /* Debug */,
@@ -482,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guess" */ = {
+		26A44B7F1CEF9E690061634C /* Build configuration list for PBXNativeTarget "whatzee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26A44B801CEF9E690061634C /* Debug */,
@@ -491,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "yahtzee i guessTests" */ = {
+		26A44B821CEF9E690061634C /* Build configuration list for PBXNativeTarget "whatzeeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26A44B831CEF9E690061634C /* Debug */,

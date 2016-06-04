@@ -9,7 +9,7 @@
         <!--Initial Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InitialScreenViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialScreenViewController" customModule="whatzee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,7 +72,7 @@
         <!--Number of Players-->
         <scene sceneID="77z-go-LWM">
             <objects>
-                <viewController id="ohU-yE-MMt" customClass="NewGameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ohU-yE-MMt" customClass="NewGameViewController" customModule="whatzee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iTj-az-Kho"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ps-LG-5C3"/>
@@ -134,7 +134,7 @@
         <!--yahtzee game view-->
         <scene sceneID="Fip-VZ-Ix8">
             <objects>
-                <viewController storyboardIdentifier="GameView" id="vLZ-Zm-8wk" customClass="GameViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameView" id="vLZ-Zm-8wk" customClass="GameViewController" customModule="whatzee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqR-lC-Yng"/>
                         <viewControllerLayoutGuide type="bottom" id="UTl-6k-KEk"/>
@@ -146,7 +146,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-Gj-VRf">
                                 <rect key="frame" x="20" y="84" width="560" height="496"/>
                                 <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-1u-ILq" customClass="SelectDiceView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-1u-ILq" customClass="SelectDiceView" customModule="whatzee" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="500" id="DEC-i6-jdN"/>
@@ -170,7 +170,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-ri-16R">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="390"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-jM-IzF" customClass="TopScoringCardView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-jM-IzF" customClass="TopScoringCardView" customModule="whatzee" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="60" width="280" height="270"/>
                                                         <subviews>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-dn-2A6">
@@ -180,7 +180,7 @@
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-Ah-riO" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-Ah-riO" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="30" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Ones">
@@ -190,7 +190,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="jhl-ah-5Qr"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-Ol-kPV" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vR-Ol-kPV" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="60" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Twos">
@@ -200,7 +200,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="nXf-2x-PWs"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9l-Ja-VDM" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9l-Ja-VDM" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="90" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Threes">
@@ -210,7 +210,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="aeo-Zw-Ng7"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aM-rD-RTP" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aM-rD-RTP" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="120" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Fours">
@@ -220,7 +220,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="NHE-2p-ZeR"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erD-21-j8s" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erD-21-j8s" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="150" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Fives">
@@ -230,7 +230,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="LO8-4x-fDg"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-LO-w4M" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-LO-w4M" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="180" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Sixes">
@@ -268,7 +268,7 @@
                                                             <outlet property="twosButton" destination="1vR-Ol-kPV" id="5x0-h0-EXB"/>
                                                         </connections>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-bC-Nbm" customClass="BottomScoringCardView" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-bC-Nbm" customClass="BottomScoringCardView" customModule="whatzee" customModuleProvider="target">
                                                         <rect key="frame" x="280" y="60" width="280" height="270"/>
                                                         <subviews>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fof-6m-JH3">
@@ -278,7 +278,7 @@
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aas-d1-BII" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aas-d1-BII" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="30" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -289,7 +289,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="yUh-YQ-gRt"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF1-Gr-e9m" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF1-Gr-e9m" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="60" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="4 of A Kind">
@@ -299,7 +299,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="qgb-Na-7Sa"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-67-46R" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-67-46R" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="90" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Full House">
@@ -309,7 +309,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="Fgw-zD-caS"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-QK-vu9" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-QK-vu9" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="120" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Small Straight">
@@ -319,7 +319,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="qWc-XP-U0D"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-X1-c4B" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-X1-c4B" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="150" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Large Straight">
@@ -329,7 +329,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="naW-fR-Qkl"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcN-ap-c3J" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcN-ap-c3J" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="180" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="YAHTZEE">
@@ -339,7 +339,7 @@
                                                                     <action selector="scoreButtonPressed:" destination="vLZ-Zm-8wk" eventType="touchUpInside" id="i0I-Aw-y02"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goN-Ts-ETW" customClass="ScoreButton" customModule="yahtzee_i_guess" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goN-Ts-ETW" customClass="ScoreButton" customModule="whatzee" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="210" width="280" height="30"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <state key="normal" title="Chance">
@@ -458,23 +458,23 @@
         <!--Game Over-->
         <scene sceneID="y1s-wA-MNg">
             <objects>
-                <tableViewController id="Rgh-gZ-CP9" customClass="GameOverTableViewController" customModule="yahtzee_i_guess" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Rgh-gZ-CP9" customClass="GameOverTableViewController" customModule="whatzee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="169" sectionHeaderHeight="28" sectionFooterHeight="28" id="hK2-te-Dl2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameOverCellID" rowHeight="169" id="YAb-89-5fG" customClass="GameOverTableViewCell" customModule="yahtzee_i_guess" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameOverCellID" rowHeight="169" id="YAb-89-5fG" customClass="GameOverTableViewCell" customModule="whatzee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="169"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YAb-89-5fG" id="geT-5A-fKc">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I5A-Tu-efA">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="I5A-Tu-efA">
                                             <rect key="frame" x="8" y="12" width="584" height="144"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sZ-Nl-9as">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sZ-Nl-9as">
                                                     <rect key="frame" x="0.0" y="0.0" width="584" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="kuk-G1-Kxb"/>
@@ -490,25 +490,25 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="top score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-zf-tq5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="top score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8d-zf-tq5">
                                                     <rect key="frame" x="0.0" y="24" width="584" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="top bonus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a5-KS-qn5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="top bonus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a5-KS-qn5">
                                                     <rect key="frame" x="0.0" y="48" width="584" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="bottom score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-e9-sKF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bottom score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-e9-sKF">
                                                     <rect key="frame" x="0.0" y="72" width="584" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="yahtzee bonus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-v7-1zT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yahtzee bonus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5e-v7-1zT">
                                                     <rect key="frame" x="0.0" y="96" width="584" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="U1g-d8-jGd"/>
@@ -522,7 +522,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Grand Total - X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-ly-T46">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total - X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-ly-T46">
                                                     <rect key="frame" x="0.0" y="120" width="584" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="159" id="j0L-fa-Nfk"/>

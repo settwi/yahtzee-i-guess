@@ -142,6 +142,11 @@ class SmallStraightScoringBox: ScoringBox {
             return 0
         }
         
+        // fix for weird dice combination
+        if uniqueDice == [1, 3, 4, 5, 6] {
+            return 30
+        }
+        
         for i in 0..<3 {
             if uniqueDice[i+1] - uniqueDice[i] != 1 {
                 return 0
