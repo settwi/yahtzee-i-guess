@@ -40,7 +40,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Continue Game"/>
                                         <connections>
-                                            <segue destination="a6Q-oK-qpN" kind="showDetail" identifier="GameSegue" action="showViewController:sender:" id="Su1-XF-QKh"/>
+                                            <segue destination="a6Q-oK-qpN" kind="show" identifier="GameSegue" id="Su1-XF-QKh"/>
                                         </connections>
                                     </button>
                                 </subviews>

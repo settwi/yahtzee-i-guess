@@ -63,6 +63,7 @@ class SelectDiceView: UIView {
  
     // MARK: Button Action
     func toggleButtonEnabledState(enabled: Bool) {
+        unselectAllDice()
         for button in diceButtons {
             button.alpha = enabled ? CGFloat(1) : CGFloat(0.4)
             button.enabled = enabled

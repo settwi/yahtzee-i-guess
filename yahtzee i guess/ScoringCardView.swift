@@ -56,12 +56,13 @@ class ScoringCardView: UIStackView {
         modifyButtonsForAlreadyScored(previouslyScored)
         for button in scoreButtons {
             if previouslyScored.keys.contains(button.scoreType) {
-                button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)",
-                                forState: [.Normal, .Disabled])
+                button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)", forState: .Normal)
+                button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)", forState: .Disabled)
                 button.enabled = false
             }
             else {
-                button.setTitle(button.scoreType, forState: [.Normal, .Disabled])
+                button.setTitle(button.scoreType, forState: .Normal)
+                button.setTitle(button.scoreType, forState: .Disabled)
             }
         }
         
@@ -71,8 +72,8 @@ class ScoringCardView: UIStackView {
                 if let button = buttonToScore {
                     button.setTitle("\(scoreId) - \(scoreVal)", forState: .Normal)
                     if button.boxScored || previouslyScored.keys.contains(button.scoreType) {
-                        button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)",
-                                        forState: [.Normal, .Disabled])
+                        button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)", forState: .Normal)
+                        button.setTitle("\(button.scoreType) - \(previouslyScored[button.scoreType]!)", forState: .Disabled)
                         button.enabled = false
                         button.solidifyScoreForRound()
                     }

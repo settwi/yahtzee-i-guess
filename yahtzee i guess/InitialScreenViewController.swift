@@ -16,7 +16,6 @@ class InitialScreenViewController: UIViewController {
     var previousGameLogic: YahtzeeGameLogic?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
     }
     
@@ -49,12 +48,12 @@ class InitialScreenViewController: UIViewController {
             numPlayers = 0 // this is so the game thing doesn't pop up again...
         }
         else if sender.sourceViewController is GameOverTableViewController {
+            deleteGameAfterFinishes()
             navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navDestination = segue.destinationViewController as? UINavigationController,
            let destination = navDestination.topViewController as? GameViewController {
@@ -77,8 +76,15 @@ class InitialScreenViewController: UIViewController {
     func saveGame(gameLogic: YahtzeeGameLogic) {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(gameLogic, toFile: YahtzeeGameLogic.ArchiveURL.path!)
         if !isSuccessfulSave {
-            print("oh, crap. this didn't work...")
+            print("save failed.")
+        }
+    }
+    
+    func deleteGameAfterFinishes() {
+        let fileManager = NSFileManager.defaultManager()
+        if fileManager.fileExistsAtPath(YahtzeeGameLogic.ArchiveURL.path!) {
+            do { try fileManager.removeItemAtPath(YahtzeeGameLogic.ArchiveURL.path!) }
+            catch { print("error removing saved gameLogic: \(error)") }
         }
     }
 }
-

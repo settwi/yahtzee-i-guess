@@ -106,7 +106,7 @@ class GameViewController: UIViewController {
             }
         }
         
-        diceView.unselectAllDice()
+        // diceView.unselectAllDice()
         diceView.updateDiceImagesFromYahtzeeDiceAnimated(gameLogic.intDice)
         
         //Hey buddy pal, I hope you're having a great day
@@ -184,11 +184,15 @@ class GameViewController: UIViewController {
     @IBAction func nextTurnButtonPressed(button: UIBarButtonItem) {
         do {
             try gameLogic.nextTurn()
+            
             navigationItem.title = "Player \(self.gameLogic.currentPlayer)"
             updateTotalScoresOnScoreCards()
+            
             button.enabled = false
             rollButton.enabled = true
+
             diceView.toggleButtonEnabledState(false)
+            
             updateAndToggleScorecards(false)
         } catch let error as YahtzeeLogicError {
             if error == YahtzeeLogicError.GameOver {
@@ -204,6 +208,7 @@ class GameViewController: UIViewController {
         performSegueWithIdentifier("GameOverSegue", sender: self)
     }
     
+    // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "GameOverSegue" {
             if let destinationNav = segue.destinationViewController as? UINavigationController {
@@ -213,4 +218,4 @@ class GameViewController: UIViewController {
             }
         }
     }
-}
+}   // whee down the pyramid
