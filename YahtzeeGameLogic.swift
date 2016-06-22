@@ -40,7 +40,7 @@ class YahtzeeGameLogic: NSObject, NSCoding {
         return rollsRemaining == 3 || scoredThisTurn ? [[:], [:]] :
             currentScoreCard.retrieveScores(intDice)
     }
-    var intDice: [Int] { return dice.map({ $0.side }) }
+    var intDice: [Int] { return dice.map { $0.side } }
     var boxesAlreadyScoredForCurrentCard: [String: Int] {
         var topScored = currentScoreCard.topScores
         for (k, v) in topScored {
@@ -57,7 +57,9 @@ class YahtzeeGameLogic: NSObject, NSCoding {
         }
         
         var finalScored = topScored
-        for (k, v) in bottomScored { finalScored[k] = v }
+        for (k, v) in bottomScored {
+            finalScored[k] = v
+        }
         
         return finalScored
     }
@@ -178,6 +180,13 @@ class YahtzeeGameLogic: NSObject, NSCoding {
         // also a mouthful
         // and a waste of time
         // whatever
+    }
+    
+    func saveGame() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(self, toFile: YahtzeeGameLogic.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("save failed.")
+        }
     }
 }
 

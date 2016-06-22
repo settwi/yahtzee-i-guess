@@ -14,6 +14,7 @@ class InitialScreenViewController: UIViewController {
     @IBOutlet weak var continueGameButton: UIButton!
     var numPlayers: Int = 0
     var previousGameLogic: YahtzeeGameLogic?
+    var currentGameLogic: YahtzeeGameLogic? // need for save before terminate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +45,8 @@ class InitialScreenViewController: UIViewController {
             numPlayers = sourceViewController.numPlayers
         }
         else if let sourceViewController = sender.sourceViewController as? GameViewController {
-            saveGame(sourceViewController.gameLogic)
-            numPlayers = 0 // this is so the game thing doesn't pop up again...
+            sourceViewController.gameLogic?.saveGame()
+            numPlayers = 0 // this is so the game vc doesn't pop up again...
         }
         else if sender.sourceViewController is GameOverTableViewController {
             deleteGameAfterFinishes()
@@ -57,6 +58,7 @@ class InitialScreenViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let navDestination = segue.destinationViewController as? UINavigationController,
            let destination = navDestination.topViewController as? GameViewController {
+
             if numPlayers != 0 {
                 let localNumPlayers = numPlayers
                 numPlayers = 0 // so that it doesn't flip flop when unloading game view
@@ -64,6 +66,7 @@ class InitialScreenViewController: UIViewController {
             } else {
                 destination.loadGame(previousGameLogic!)
             }
+            currentGameLogic = destination.gameLogic
         }
     }
     
@@ -71,13 +74,6 @@ class InitialScreenViewController: UIViewController {
     func loadPreviousGame() -> YahtzeeGameLogic? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(
             YahtzeeGameLogic.ArchiveURL.path!) as? YahtzeeGameLogic
-    }
-    
-    func saveGame(gameLogic: YahtzeeGameLogic) {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(gameLogic, toFile: YahtzeeGameLogic.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("save failed.")
-        }
     }
     
     func deleteGameAfterFinishes() {

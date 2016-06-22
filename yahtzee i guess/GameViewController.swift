@@ -8,6 +8,8 @@
 
 import UIKit
 
+// had to make gameLogic real optional. quick fix was copy-paste name at beginning of methods.
+
 class GameViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var rollButton: UIButton!
@@ -15,11 +17,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bottomScoringCard: BottomScoringCardView!
     @IBOutlet weak var diceView: SelectDiceView!
     @IBOutlet weak var nextTurnButton: UIBarButtonItem!
-    var gameLogic: YahtzeeGameLogic!             // implicitly unwrapped to avoid initializer loll
+    var gameLogic: YahtzeeGameLogic?
     var numPlayers: Int = 0
     
     override func viewDidLoad() {
         nextTurnButton.enabled = false
+        let gameLogic = self.gameLogic!
         diceView.updateDiceImagesFromYahtzeeDice(gameLogic.intDice)
         topScoringCard.parentViewDidLoad(gameLogic.boxesAlreadyScoredForCurrentCard)
         bottomScoringCard.parentViewDidLoad(gameLogic.boxesAlreadyScoredForCurrentCard)
@@ -64,6 +67,7 @@ class GameViewController: UIViewController {
     }
     
     func updateTotalScoresOnScoreCards() {
+        let gameLogic = self.gameLogic!
         let currentTotalScore = gameLogic.currentTotalScore
         let topScore = currentTotalScore[0]
         let topBonus = currentTotalScore[1]
@@ -76,6 +80,7 @@ class GameViewController: UIViewController {
     
     // MARK: Roll button action
     @IBAction func rollButtonPressed(button: UIButton) {
+        let gameLogic = self.gameLogic!
         // shoutout to tait for the great idea of 
         // a shaking rolling thingy
         if gameLogic.rollsRemaining == 3 {
@@ -113,6 +118,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func scoreButtonPressed(button: ScoreButton) {
+        let gameLogic = self.gameLogic!
         let key = button.scoreType
         var scoreVal = 0
         if gameLogic.potentialScores[0].keys.contains(key) {
@@ -136,6 +142,7 @@ class GameViewController: UIViewController {
     
     // MARK: Score button action
     func userWantsToScore(button: ScoreButton) {
+        let gameLogic = self.gameLogic!
         do {
             try gameLogic.scoreRoll(button.scoreType)
             button.solidifyScoreForRound()
@@ -158,11 +165,12 @@ class GameViewController: UIViewController {
             presentViewController(alertCtl, animated: true, completion: nil)
         }
         catch {
-            print("go away, pesky error! begone!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! fienD!L!!!!!!!!!!")
+            print("unknown error: \(error)")
         }
     }
     
     func updateScoreCardsFromPotentialScores() {
+        let gameLogic = self.gameLogic!
         let alreadyScored = gameLogic.boxesAlreadyScoredForCurrentCard
         let scores = gameLogic.potentialScores
         topScoringCard.updateButtonTitlesFromNewScores(scores[0], previouslyScored: alreadyScored)
@@ -182,10 +190,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func nextTurnButtonPressed(button: UIBarButtonItem) {
+        let gameLogic = self.gameLogic!
         do {
             try gameLogic.nextTurn()
             
-            navigationItem.title = "Player \(self.gameLogic.currentPlayer)"
+            navigationItem.title = "Player \(gameLogic.currentPlayer)"
             updateTotalScoresOnScoreCards()
             
             button.enabled = false
@@ -210,6 +219,7 @@ class GameViewController: UIViewController {
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let gameLogic = self.gameLogic!
         if segue.identifier == "GameOverSegue" {
             if let destinationNav = segue.destinationViewController as? UINavigationController {
                 if let gameOverTableView = destinationNav.topViewController as? GameOverTableViewController {

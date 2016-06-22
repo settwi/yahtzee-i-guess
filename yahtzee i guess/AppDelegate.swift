@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("95eedaf7114244d6b518fd15dd5d2449")
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
+        BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+
         return true
     }
 
@@ -38,9 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if let initialViewController = window?.rootViewController as? InitialScreenViewController {
+            if let currentGameLogic = initialViewController.currentGameLogic {
+                currentGameLogic.saveGame()
+            }
+        }
     }
-
-
 }
 
