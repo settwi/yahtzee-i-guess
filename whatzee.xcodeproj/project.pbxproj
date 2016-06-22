@@ -27,8 +27,6 @@
 		26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6C1CEF9E690061634C /* Assets.xcassets */; };
 		26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A44B6E1CEF9E690061634C /* LaunchScreen.storyboard */; };
 		26A44B7B1CEF9E690061634C /* yahtzee_i_guessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */; };
-		3D071DD31D1A6FC70016141E /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D071DD01D1A6FC70016141E /* HockeySDK.framework */; };
-		3D071DD41D1A6FC70016141E /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D071DD21D1A6FC70016141E /* HockeySDKResources.bundle */; };
 		467AC4571CF7515F00431C0C /* YahtzeeGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AC4561CF7515F00431C0C /* YahtzeeGameLogic.swift */; };
 		46C81DAE1CF38FF700663C25 /* SixSidedDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */; };
 		46C81DAF1CF38FF700663C25 /* SixSidedDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */; };
@@ -66,8 +64,6 @@
 		26A44B761CEF9E690061634C /* whatzee.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whatzee.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A44B7A1CEF9E690061634C /* yahtzee_i_guessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yahtzee_i_guessTests.swift; sourceTree = "<group>"; };
 		26A44B7C1CEF9E690061634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D071DD01D1A6FC70016141E /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
-		3D071DD21D1A6FC70016141E /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		467AC4561CF7515F00431C0C /* YahtzeeGameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahtzeeGameLogic.swift; sourceTree = "<group>"; };
 		46C81DAD1CF38FF700663C25 /* SixSidedDie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SixSidedDie.swift; path = "yahtzee i guess/SixSidedDie.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D071DD31D1A6FC70016141E /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +132,6 @@
 		26A44B591CEF9E690061634C = {
 			isa = PBXGroup;
 			children = (
-				3D071DCF1D1A6FC70016141E /* HockeySDK.embeddedframework */,
 				267D2BF81CF9EC5D00B1B91C /* SelectDiceView.swift */,
 				267080861CF6287300B53E35 /* logic */,
 				26A44B641CEF9E690061634C /* yahtzee i guess */,
@@ -176,24 +170,6 @@
 				26A44B7C1CEF9E690061634C /* Info.plist */,
 			);
 			path = "yahtzee i guessTests";
-			sourceTree = "<group>";
-		};
-		3D071DCF1D1A6FC70016141E /* HockeySDK.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				3D071DD01D1A6FC70016141E /* HockeySDK.framework */,
-				3D071DD11D1A6FC70016141E /* Resources */,
-			);
-			name = HockeySDK.embeddedframework;
-			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
-			sourceTree = "<group>";
-		};
-		3D071DD11D1A6FC70016141E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3D071DD21D1A6FC70016141E /* HockeySDKResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A44B701CEF9E690061634C /* LaunchScreen.storyboard in Resources */,
-				3D071DD41D1A6FC70016141E /* HockeySDKResources.bundle in Resources */,
 				26A44B6D1CEF9E690061634C /* Assets.xcassets in Resources */,
 				26A44B6B1CEF9E690061634C /* Main.storyboard in Resources */,
 			);
